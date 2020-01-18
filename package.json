@@ -1,0 +1,25 @@
+{
+  "name": "veganplanet",
+  "version": "1.0.0",
+  "description": "- Wed Jan 15 Alter README",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aRaisd/veganPlanet.git"
+  },
+  "author": "Armin Raisd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aRaisd/veganPlanet/issues"
+  },
+  "homepage": "https://github.com/aRaisd/veganPlanet#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-webserver": "^0.9.1",
+    "nodemon": "^2.0.2"
+  }
+}
