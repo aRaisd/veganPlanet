@@ -22,5 +22,4 @@
     "gulp-webserver": "^0.9.1",
     "nodemon": "^2.0.2"
   }
-
 }
