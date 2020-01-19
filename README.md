@@ -16,11 +16,13 @@
   
 # Logged Changes
 
-- Wed Jan 15 Alter README
+- Sun 19/01/2020 Updated and corrected README
 
-- Wed Jan 15 Adding Log header
+- Wed 15/01/2020 Alter README
 
-- Mon Jan 6 Initial commit
+- Wed 15/01/2020 Adding Log header
+
+- Mon 06/01/2020 Initial commit
 
 
 
