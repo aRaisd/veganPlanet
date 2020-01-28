@@ -16,6 +16,8 @@
   
 # Logged Changes
 
+- Tue 28/01/2020 Add a structure to the html + added style
+
 - Sun 19/01/2020 Updated and corrected README
 
 - Wed 15/01/2020 Alter README
