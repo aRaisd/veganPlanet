@@ -16,6 +16,9 @@
   
 # Logged Changes
 
+- Wed 29/01/2020
+    Added:  Nav-bar, img & lib folders
+
 - Tue 28/01/2020 Add a structure to the html + added style
 
 - Sun 19/01/2020 Updated and corrected README
