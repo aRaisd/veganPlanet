@@ -4,9 +4,11 @@ $color: rgba(12, 12, 12, 0.904);
 $main-font:'Arial';
 $container: 960px;
 $primary-color: #62d6666e;
-$light-color: rgb(118, 216, 98);
-$dark-color: rgb(32, 61, 26);
-
+$light-color: rgb(118, 216, 98, 0.3);
+$dark-color: rgba(32, 61, 26, 0.5);
+$img1: url(./img/foods/close-up-photo-of-cake-3026809.jpg);
+$img2: url(./img/foods/french-fries-with-dipping-sauce-1893556.jpg);
+$img3: url(./img/foods/vegetable-salad-3026808.jpg);
 // Elements
 * {
   margin: 0;
@@ -15,19 +17,18 @@ $dark-color: rgb(32, 61, 26);
 
 body {
   background-color: $bg-color;
+  background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
   color: $color;
   font-family: $main-font;
   text-align: center;
 }
 
-
-
 header,
+container,
 footer,
 #content,
 .SideBar,
 .main-nav {
-  background: #62d6666e;
   border: 0.1rem solid black;
   border-radius: 0.4rem;
   padding: 1rem;
@@ -61,7 +62,6 @@ div {
     list-style: none;
     display: inline-block;
     padding: 0 1rem;
-    float: right;
   }
 
   #content {
@@ -76,18 +76,22 @@ a {
 }
 
 // Ids
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #SideBar1 {
-  background-color: greenyellow;
+  background-color: rgba(172, 255, 47, 0.5);
 }
 
 #SideBar2 {
-  background-color: rgb(50, 119, 62);
+  background-color: rgba(50, 119, 62, 0.5);
 }
 
 // Classes
-.container {
-  // max-width: $container;
-  // margin: auto;
-  padding: 1em;
-  background: $primary-color;
-}

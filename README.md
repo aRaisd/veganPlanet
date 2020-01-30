@@ -15,6 +15,7 @@
   
   
 # Logged Changes
+- Thu 30/01/2020 Added Carousel of meals, and testing some css background colour/images... etc
 
 - Wed 29/01/2020
     Added:  Nav-bar, img & lib folders
