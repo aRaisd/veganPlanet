@@ -4,8 +4,9 @@ $color: rgba(12, 12, 12, 0.904);
 $main-font:'Arial';
 $container: 960px;
 $primary-color: #62d6666e;
-$light-color: rgb(118, 216, 98, 0.3);
+$light-color: rgba(118, 216, 98, 0.3);
 $dark-color: rgba(32, 61, 26, 0.5);
+$bg-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
 $img1: url(./img/foods/close-up-photo-of-cake-3026809.jpg);
 $img2: url(./img/foods/french-fries-with-dipping-sauce-1893556.jpg);
 $img3: url(./img/foods/vegetable-salad-3026808.jpg);
@@ -17,7 +18,7 @@ $img3: url(./img/foods/vegetable-salad-3026808.jpg);
 
 body {
   background-color: $bg-color;
-  background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
+  background-image: $bg-image;
   color: $color;
   font-family: $main-font;
   text-align: center;

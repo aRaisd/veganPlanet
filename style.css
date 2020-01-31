@@ -42,7 +42,7 @@ div {
     display: inline-block;
     padding: 0 1rem; }
   div #content {
-    background-color: #76d862;
+    background-color: rgba(118, 216, 98, 0.3);
     padding: 1em; }
 
 a {
