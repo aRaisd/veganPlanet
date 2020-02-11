@@ -1,9 +1,9 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
 
 body {
-  background-color: #92e094;
   background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
   color: rgba(12, 12, 12, 0.904);
   font-family: "Arial";
@@ -19,19 +19,26 @@ footer,
   border-radius: 0.4rem;
   padding: 1rem;
   margin: 1rem;
-  background: #62d6666e;
+  background: #4fe96960;
   text-align: justify; }
 
 header,
 h1 {
-  text-align: center; }
+  text-align: center;
+  text-shadow: 1px 1px 1px white; }
+
+header {
+  margin-bottom: 0rem;
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-bottom-width: 0rem; }
 
 footer {
   color: whitesmoke;
   background-color: rgba(12, 12, 12, 0.904); }
 
 .main-nav {
-  padding: 0 0; }
+  padding: 0rem 0rem; }
 
 div {
   margin: auto; }
@@ -42,11 +49,17 @@ div {
     display: inline-block;
     padding: 0 1rem; }
   div #content {
-    background-color: rgba(118, 216, 98, 0.3);
+    background-color: rgba(133, 231, 171, 0.3);
     padding: 1em; }
 
 a {
   text-decoration: none; }
+
+#SideBar1 {
+  background-color: rgba(172, 255, 47, 0.4); }
+
+#SideBar2 {
+  background-color: rgba(50, 119, 62, 0.4); }
 
 .carousel-item {
   height: 65vh;
@@ -57,8 +70,12 @@ a {
   -o-background-size: cover;
   background-size: cover; }
 
-#SideBar1 {
-  background-color: rgba(172, 255, 47, 0.5); }
+.display-4 {
+  text-shadow: 5px 5px 10px black;
+  font-weight: 300; }
 
-#SideBar2 {
-  background-color: rgba(50, 119, 62, 0.5); }
+.lead {
+  text-shadow: 4px 4px 15px black; }
+
+.container > div {
+  font-size: 1.3rem; }
