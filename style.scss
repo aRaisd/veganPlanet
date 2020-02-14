@@ -1,127 +1,123 @@
 // Variables -----------------------
-$svgWidth: 733 px;
-$svgHeight: 54 px;
-$bg-color:rgba(42, 165, 18, 0.651);
-$color: rgba(12, 12, 12, 0.904);
-$main-font:'Arial';
-$container: 960px;
-$primary-color: #4fe96960;
-$light-color: rgba(133, 231, 171, 0.3);
-$dark-color: rgba(42, 165, 18, 0.651);
-$bg-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
-$img1: url(./img/foods/close-up-photo-of-cake-3026809.jpg);
-$img2: url(./img/foods/french-fries-with-dipping-sauce-1893556.jpg);
-$img3: url(./img/foods/vegetable-salad-3026808.jpg);
+$light-color: rgba(133, 231, 171, 0.671);
 
-// Elements
+
+// -----------------------------------------
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
-
 body {
-  // background-color: $bg-color;
-  background-image: $bg-image;
-  color: $color;
-  font-family: $main-font;
-  text-align: center;
-}
-
-header,
-container,
-footer,
-#content,
-.SideBar,
-.main-nav {
-  border: 0.1rem solid black;
-  border-radius: 0.4rem;
-  padding: 1rem;
-  margin: 1rem;
-  background: $primary-color;
-  text-align: justify;
-}
-
-header,
-h1 {
-  text-align: center;
-  text-shadow: 1px 1px 1px white;
-}
-
-header {
-  margin-bottom: 0rem;
-  border-bottom-left-radius: 0rem;
-  border-bottom-right-radius: 0rem;
-  border-bottom-width: 0rem;
-}
-
-footer {
-  color: whitesmoke;
-  background-color: rgba(12, 12, 12, 0.904);
-}
-
-.main-nav {
-  padding: 0rem 0rem;
-}
-
-div {
-  margin: auto;
-
-  h1 {
-    display: block;
+  background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
+	color: #080808;
+	font-family: "Arial";
+  box-sizing: border-box;
+  border-radius: 1.4rem;
+  .navbar,.navbar-expand-lg,.navbar-dark,.bg-dark,.static-top {
+    .container {
+      a {
+        img { src: 'http://localhost:3333/img/logo/vgnLogo.png'; }
+        
+      }
+    }
   }
-
-  // ul { margin-bottom: 0;}
-  li {
-    list-style: none;
-    display: inline-block;
-    padding: 0 1rem;
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+        'show show show show'
+        'main main main SideBar1'
+        'main main main SideBar2'
+        'footer footer footer footer';
+    grid-gap: 2rem;
+    padding: 1rem;
+    margin: 2rem;
+  
+    // grid-gap: 1rem;
+    background-color: rgba(29, 68, 22, 0.5);
+    h1, h2, h3 {
+      text-align: center;
+      text-shadow: 1px 1px 1px white;
+    }
+    div {
+      text-align: justify;
+    }
+    .show {
+      grid-area: show; padding-bottom: 0rem;
+          .carousel-inner {
+            .carousel-item {
+              // height: 50vh;
+              width: 80%;
+              // min-height: 350px;
+              background: no-repeat center center scroll;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+              .carousel-caption {
+                .display-4 {
+                  text-shadow: 5px 5px 10px black;
+                  font-weight: 300;
+                }
+                .lead {
+                  text-align: center;
+                }
+              }
+            }
+          }
+          .carousel-control-prev {
+            justify-content: left;
+            width: 4rem;
+          }
+          .carousel-control-next {
+            justify-content: right;
+            width: 4rem;
+          }
+      
+    }
+    .main {
+      background-color: $light-color;
+      grid-area: main;
+      // .container {
+      //   div {
+          
+      //   }
+      //   a {
+          
+      //   }
+      // }
+      
+    }
+    .SideBar1 {
+      background-color: rgba(172, 255, 47, 0.4);
+      grid-area: SideBar1;
+      // .container {
+      //   div {
+          
+      //   }
+      //   a {
+          
+      //   }
+      // }      
+    }
+    .SideBar2 {
+      background-color: rgba(50, 119, 62, 0.4);
+      grid-area: SideBar2;
+      // .container {
+      //   div {
+          
+      //   }
+      //   a {
+          
+      //   }
+      // }      
+    }
+    .footer {
+      grid-area: footer;
+      // .container {
+      //   a {
+          
+      //   }
+      // }      
+    }
   }
-
-  #content {
-    background-color: $light-color;
-    padding: 1em;
-  }
-
-}
-
-a {
-  text-decoration: none;
-}
-
-
-// Ids
-
-#SideBar1 {
-  background-color: rgba(172, 255, 47, 0.4);
-}
-
-#SideBar2 {
-  background-color: rgba(50, 119, 62, 0.4);
-}
-
-
-// Classes
-
-.carousel-item {
-  height: 65vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.display-4 {
-  text-shadow: 5px 5px 10px black;
-  font-weight: 300;
-}
-
-.lead {
-  text-shadow: 4px 4px 15px black;
-}
-
-.container>div {
-  font-size: 1.3rem;
 }
