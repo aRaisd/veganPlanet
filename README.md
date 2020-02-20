@@ -15,6 +15,7 @@
   
   
 # Logged Changes
+-  Thu Feb 20 - More scss work!
 
 - Fri Feb 14 - Added pc grit layout background image size
 - Tue 11/02/2020 Add font-shadow and increased the carousel's data interval
