@@ -1,6 +1,8 @@
 // Variables -----------------------
-$light-color: rgba(133, 231, 171, 0.671);
-
+$light-color: rgba(133, 231, 171, 0.8);
+$bg-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
+$height: 50vh;
+$min-height: 350px;
 
 // -----------------------------------------
 * {
@@ -8,19 +10,11 @@ $light-color: rgba(133, 231, 171, 0.671);
 	padding: 0;
 }
 body {
-  background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
+  background-image: $bg-image;
+	background-color: rgba(29, 68, 22, 0.651);
 	color: #080808;
 	font-family: "Arial";
-  box-sizing: border-box;
   border-radius: 1.4rem;
-  .navbar,.navbar-expand-lg,.navbar-dark,.bg-dark,.static-top {
-    .container {
-      a {
-        img { src: 'http://localhost:3333/img/logo/vgnLogo.png'; }
-        
-      }
-    }
-  }
   .grid-container {
     display: grid;
     grid-template-areas: 
@@ -29,8 +23,9 @@ body {
         'main main main SideBar2'
         'footer footer footer footer';
     grid-gap: 2rem;
-    padding: 1rem;
+    padding: 2rem;
     margin: 2rem;
+    border-radius: 0.4rem;
   
     // grid-gap: 1rem;
     background-color: rgba(29, 68, 22, 0.5);
@@ -38,45 +33,34 @@ body {
       text-align: center;
       text-shadow: 1px 1px 1px white;
     }
-    div {
-      text-align: justify;
+    // Ids
+    .carousel-item {
+      height: $height;
+      min-height: $min-height;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
     }
     .show {
-      grid-area: show; padding-bottom: 0rem;
-          .carousel-inner {
-            .carousel-item {
-              // height: 50vh;
-              width: 80%;
-              // min-height: 350px;
-              background: no-repeat center center scroll;
-              -webkit-background-size: cover;
-              -moz-background-size: cover;
-              -o-background-size: cover;
-              background-size: cover;
-              .carousel-caption {
-                .display-4 {
-                  text-shadow: 5px 5px 10px black;
-                  font-weight: 300;
-                }
-                .lead {
-                  text-align: center;
-                }
-              }
-            }
-          }
-          .carousel-control-prev {
-            justify-content: left;
-            width: 4rem;
-          }
-          .carousel-control-next {
-            justify-content: right;
-            width: 4rem;
-          }
-      
+      grid-area: show;
+      padding-bottom: 0rem;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      h1 {
+        background-color: #0e610e;
+        border-radius: 0.4rem  0.4rem 0rem 0rem;
+        margin-bottom: 0rem;
+      }
     }
     .main {
       background-color: $light-color;
       grid-area: main;
+      border-radius: 0.4rem;
+
       // .container {
       //   div {
           
@@ -88,20 +72,27 @@ body {
       
     }
     .SideBar1 {
-      background-color: rgba(172, 255, 47, 0.4);
+      background-color: rgba(172, 255, 47, 0.7);
       grid-area: SideBar1;
+      border-radius: 0.4rem;
       // .container {
-      //   div {
+        //   div {
           
-      //   }
-      //   a {
-          
-      //   }
+          //   }
+          //   a {
+            
+            //   }
+            // }      
       // }      
-    }
+            // }      
+      // }      
+            // }      
+     }
     .SideBar2 {
-      background-color: rgba(50, 119, 62, 0.4);
+      background-color: rgba(50, 119, 62, 0.7);
       grid-area: SideBar2;
+      border-radius: 0.4rem;
+      padding-bottom: 1rem;
       // .container {
       //   div {
           
@@ -119,5 +110,26 @@ body {
       //   }
       // }      
     }
+    div {
+      text-align: justify;
+      div {padding-bottom: 1 rem;}
+    }
+    .carousel-inner {
+      border-radius: 0rem 0rem 0.4rem 0.4rem;
+    }
+    .carousel-caption {
+      text-align: center;
+    }
+    .carousel-control-prev, .carousel-control-next {
+      width: 5%;
+      .carousel-control-prev-icon, .carousel-control-next-icon {
+        border-radius: 50%;
+        background-color: black; 
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
+
 }
+

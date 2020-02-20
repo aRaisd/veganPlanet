@@ -4,53 +4,67 @@
 
 body {
   background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
+  background-color: rgba(29, 68, 22, 0.651);
   color: #080808;
   font-family: "Arial";
-  box-sizing: border-box;
   border-radius: 1.4rem; }
-  body .navbar .container a img, body .navbar-expand-lg .container a img, body .navbar-dark .container a img, body .bg-dark .container a img, body .static-top .container a img {
-    src: 'http://localhost:3333/img/logo/vgnLogo.png'; }
   body .grid-container {
     display: grid;
     grid-template-areas: 'show show show show' 'main main main SideBar1' 'main main main SideBar2' 'footer footer footer footer';
     grid-gap: 2rem;
-    padding: 1rem;
+    padding: 2rem;
     margin: 2rem;
+    border-radius: 0.4rem;
     background-color: rgba(29, 68, 22, 0.5); }
     body .grid-container h1, body .grid-container h2, body .grid-container h3 {
       text-align: center;
       text-shadow: 1px 1px 1px white; }
-    body .grid-container div {
-      text-align: justify; }
+    body .grid-container .carousel-item {
+      height: 50vh;
+      min-height: 350px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; }
     body .grid-container .show {
       grid-area: show;
-      padding-bottom: 0rem; }
-      body .grid-container .show .carousel-inner .carousel-item {
-        width: 80%;
-        background: no-repeat center center scroll;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover; }
-        body .grid-container .show .carousel-inner .carousel-item .carousel-caption .display-4 {
-          text-shadow: 5px 5px 10px black;
-          font-weight: 300; }
-        body .grid-container .show .carousel-inner .carousel-item .carousel-caption .lead {
-          text-align: center; }
-      body .grid-container .show .carousel-control-prev {
-        justify-content: left;
-        width: 4rem; }
-      body .grid-container .show .carousel-control-next {
-        justify-content: right;
-        width: 4rem; }
+      padding-bottom: 0rem;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; }
+      body .grid-container .show h1 {
+        background-color: #0e610e;
+        border-radius: 0.4rem  0.4rem 0rem 0rem;
+        margin-bottom: 0rem; }
     body .grid-container .main {
-      background-color: rgba(133, 231, 171, 0.671);
-      grid-area: main; }
+      background-color: rgba(133, 231, 171, 0.8);
+      grid-area: main;
+      border-radius: 0.4rem; }
     body .grid-container .SideBar1 {
-      background-color: rgba(172, 255, 47, 0.4);
-      grid-area: SideBar1; }
+      background-color: rgba(172, 255, 47, 0.7);
+      grid-area: SideBar1;
+      border-radius: 0.4rem; }
     body .grid-container .SideBar2 {
-      background-color: rgba(50, 119, 62, 0.4);
-      grid-area: SideBar2; }
+      background-color: rgba(50, 119, 62, 0.7);
+      grid-area: SideBar2;
+      border-radius: 0.4rem;
+      padding-bottom: 1rem; }
     body .grid-container .footer {
       grid-area: footer; }
+    body .grid-container div {
+      text-align: justify; }
+      body .grid-container div div {
+        padding-bottom: 1 rem; }
+    body .grid-container .carousel-inner {
+      border-radius: 0rem 0rem 0.4rem 0.4rem; }
+    body .grid-container .carousel-caption {
+      text-align: center; }
+    body .grid-container .carousel-control-prev, body .grid-container .carousel-control-next {
+      width: 5%; }
+      body .grid-container .carousel-control-prev .carousel-control-prev-icon, body .grid-container .carousel-control-prev .carousel-control-next-icon, body .grid-container .carousel-control-next .carousel-control-prev-icon, body .grid-container .carousel-control-next .carousel-control-next-icon {
+        border-radius: 50%;
+        background-color: black;
+        width: 2rem;
+        height: 2rem; }
