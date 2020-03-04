@@ -15,6 +15,8 @@
   
   
 # Logged Changes
+- Thu Mar 04 - Fixed carousel, next & prev control indicators.
+
 -  Thu Feb 20 - More scss work!
 
 - Fri Feb 14 - Added pc grit layout background image size

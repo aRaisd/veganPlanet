@@ -7,74 +7,106 @@ $min-height: 350px;
 // -----------------------------------------
 * {
 	margin: 0;
-	padding: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
   background-image: $bg-image;
-	background-color: rgba(29, 68, 22, 0.651);
+	// background-color: rgba(29, 68, 22, 0.651);
 	color: #080808;
 	font-family: "Arial";
   border-radius: 1.4rem;
   .grid-container {
     display: grid;
     grid-template-areas: 
-        'show show show show'
-        'main main main SideBar1'
-        'main main main SideBar2'
-        'footer footer footer footer';
+    'show show show show'
+    'main main main SideBar1'
+    'main main main SideBar2'
+    'footer footer footer footer';
     grid-gap: 2rem;
     padding: 2rem;
     margin: 2rem;
     border-radius: 0.4rem;
-  
+    
     // grid-gap: 1rem;
     background-color: rgba(29, 68, 22, 0.5);
     h1, h2, h3 {
       text-align: center;
       text-shadow: 1px 1px 1px white;
     }
-    // Ids
-    .carousel-item {
-      height: $height;
-      min-height: $min-height;
-      background: no-repeat center center scroll;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
     .show {
       grid-area: show;
-      padding-bottom: 0rem;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+      // padding-bottom: 0rem;
       h1 {
         background-color: #0e610e;
         border-radius: 0.4rem  0.4rem 0rem 0rem;
         margin-bottom: 0rem;
+      }
+      // carousel
+      .carousel {
+        position: relative;
+        height: 600px;
+        width: 100%;
+        margin: 0 auto;
+        #carouselExampleIndicators {
+          ol.carousel-indicators {
+            margin: 0 auto;
+            li {
+              height: 10px;
+              width: 10px;
+              margin: 0 4px;
+              border-radius: 50%;
+            }
+            // -webkit-background-size: cover;
+            // -moz-background-size: cover;
+            // -o-background-size: cover;
+            // background-size: cover;
+          }
+          
+        }
+        .carousel-inner {
+          height: 100%;
+          border-radius: 0rem 0rem 0.4rem 0.4rem;
+          .carousel-item {
+            height: 100%;
+          }
+        }
+        .carousel-caption {
+          text-align: center;
+          padding: 0rem;
+        }
+        .carousel-control-prev, .carousel-control-next {
+          width: 5%;
+          .carousel-control-prev-icon, .carousel-control-next-icon {
+            border-radius: 50%;
+            background-color: rgb(16, 104, 23); 
+            width: 4rem;
+            height: 2rem;
+          }
+        }
+        .carousel-control-prev {
+          left: -3rem;
+        }
+        .carousel-control-next {
+          right: -3rem;
+        }
+
+        .carousel-item {
+          height: $height;
+          min-height: $min-height;
+          background: no-repeat center center scroll;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
       }
     }
     .main {
       background-color: $light-color;
       grid-area: main;
       border-radius: 0.4rem;
-
-      // .container {
-      //   div {
-          
-      //   }
-      //   a {
-          
-      //   }
-      // }
       
-    }
-    .SideBar1 {
-      background-color: rgba(172, 255, 47, 0.7);
-      grid-area: SideBar1;
-      border-radius: 0.4rem;
       // .container {
         //   div {
           
@@ -82,54 +114,33 @@ body {
           //   a {
             
             //   }
-            // }      
-      // }      
-            // }      
-      // }      
-            // }      
-     }
+            // }
+            
+    }
+    .SideBar1 {
+      background-color: rgba(172, 255, 47, 0.7);
+      grid-area: SideBar1;
+      border-radius: 0.4rem;
+    }
     .SideBar2 {
       background-color: rgba(50, 119, 62, 0.7);
       grid-area: SideBar2;
       border-radius: 0.4rem;
       padding-bottom: 1rem;
-      // .container {
-      //   div {
-          
-      //   }
-      //   a {
-          
-      //   }
-      // }      
     }
     .footer {
       grid-area: footer;
-      // .container {
-      //   a {
-          
-      //   }
-      // }      
     }
     div {
       text-align: justify;
       div {padding-bottom: 1 rem;}
     }
-    .carousel-inner {
-      border-radius: 0rem 0rem 0.4rem 0.4rem;
-    }
-    .carousel-caption {
-      text-align: center;
-    }
-    .carousel-control-prev, .carousel-control-next {
-      width: 5%;
-      .carousel-control-prev-icon, .carousel-control-next-icon {
-        border-radius: 50%;
-        background-color: black; 
-        width: 2rem;
-        height: 2rem;
-      }
-    }
   }
-
 }
-
+                      
+// @media only screen and (min-width: 1100px) {
+//   body {
+//     background-color: lightblue;
+//     z-index: 5;
+//   }
+// }

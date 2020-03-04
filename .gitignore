@@ -2,6 +2,7 @@ package-lock.json
 node_modules/
 fontawesome-5.12.0-web/
 indexsSvg.html
+indexsInd.html
 styleNw.scss
 styleNw.css
 styleOld.scss
