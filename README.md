@@ -15,6 +15,8 @@
   
   
 # Logged Changes
+- Thu Mar 05 - carousel-fade ... ect
+
 - Thu Mar 04 - Fixed carousel, next & prev control indicators.
 
 -  Thu Feb 20 - More scss work!

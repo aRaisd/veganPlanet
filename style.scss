@@ -57,10 +57,6 @@ body {
               margin: 0 4px;
               border-radius: 50%;
             }
-            // -webkit-background-size: cover;
-            // -moz-background-size: cover;
-            // -o-background-size: cover;
-            // background-size: cover;
           }
           
         }
@@ -70,10 +66,6 @@ body {
           .carousel-item {
             height: 100%;
           }
-        }
-        .carousel-caption {
-          text-align: center;
-          padding: 0rem;
         }
         .carousel-control-prev, .carousel-control-next {
           width: 5%;
@@ -90,7 +82,7 @@ body {
         .carousel-control-next {
           right: -3rem;
         }
-
+        
         .carousel-item {
           height: $height;
           min-height: $min-height;
@@ -99,6 +91,10 @@ body {
           -moz-background-size: cover;
           -o-background-size: cover;
           background-size: cover;
+          .carousel-caption {
+            text-align: center;
+            padding: 0rem;
+          }
         }
       }
     }
