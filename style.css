@@ -5,22 +5,39 @@
 
 body {
   background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
+  background-size: cover;
+  font-size: 2.5vw;
   color: #080808;
   font-family: "Arial";
   border-radius: 1.4rem; }
   body .grid-container {
     display: grid;
-    grid-template-areas: 'show show show show' 'main main main SideBar1' 'main main main SideBar2' 'footer footer footer footer';
+    grid-template-areas: "show show show show" "main main main SideBar1" "main main main SideBar2" "footer footer footer footer";
     grid-gap: 2rem;
     padding: 2rem;
-    margin: 2rem;
+    margin: auto;
     border-radius: 0.4rem;
     background-color: rgba(29, 68, 22, 0.5); }
+    body .grid-container .show {
+      grid-area: show;
+      height: auto;
+      width: 50vw;
+      margin: auto; }
+    body .grid-container .main {
+      grid-area: main;
+      height: auto; }
+    body .grid-container .SideBar1 {
+      grid-area: SideBar1; }
+    body .grid-container .SideBar2 {
+      grid-area: SideBar2; }
+    body .grid-container .footer {
+      grid-area: footer; }
     body .grid-container h1, body .grid-container h2, body .grid-container h3 {
       text-align: center;
-      text-shadow: 1px 1px 1px white; }
+      text-shadow: -4px 4px 7px white;
+      font-size: 4vw; }
     body .grid-container .show {
-      grid-area: show; }
+      max-width: 940px; }
       body .grid-container .show h1 {
         background-color: #0e610e;
         border-radius: 0.4rem  0.4rem 0rem 0rem;
@@ -28,7 +45,7 @@ body {
       body .grid-container .show .carousel {
         position: relative;
         height: 600px;
-        width: 100%;
+        width: auto;
         margin: 0 auto; }
         body .grid-container .show .carousel #carouselExampleIndicators ol.carousel-indicators {
           margin: 0 auto; }
@@ -64,6 +81,8 @@ body {
           body .grid-container .show .carousel .carousel-item .carousel-caption {
             text-align: center;
             padding: 0rem; }
+            body .grid-container .show .carousel .carousel-item .carousel-caption .display-4 {
+              color: black; }
     body .grid-container .main {
       background-color: rgba(133, 231, 171, 0.8);
       grid-area: main;
@@ -83,3 +102,11 @@ body {
       text-align: justify; }
       body .grid-container div div {
         padding-bottom: 1 rem; }
+
+@media (max-width: 866px) {
+  body .grid-container {
+    grid-template-areas: "show show show show" "main main main main" "SideBar1 SideBar1 SideBar2 SideBar2" "footer footer footer footer"; } }
+
+@media (max-width: 559px) {
+  body .grid-container {
+    grid-template-areas: "show show" "main main" "SideBar1 SideBar1" "SideBar2 SideBar2" "footer footer"; } }

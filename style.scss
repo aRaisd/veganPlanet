@@ -12,31 +12,50 @@ $min-height: 350px;
 }
 body {
   background-image: $bg-image;
-	// background-color: rgba(29, 68, 22, 0.651);
+  background-size: cover;
+  font-size: 2.5vw;
 	color: #080808;
 	font-family: "Arial";
   border-radius: 1.4rem;
   .grid-container {
     display: grid;
+    .show {
+      grid-area: show;
+      height: auto;
+      width: 50vw;
+      margin: auto;
+    }
+    .main {
+      grid-area: main;
+      height: auto;
+    }
+    .SideBar1 {
+      grid-area: SideBar1;
+    }
+    .SideBar2 {
+      grid-area: SideBar2;
+    }
+    .footer {
+      grid-area: footer;
+    }
     grid-template-areas: 
-    'show show show show'
-    'main main main SideBar1'
-    'main main main SideBar2'
-    'footer footer footer footer';
+      "show show show show"
+      "main main main SideBar1"
+      "main main main SideBar2"
+      "footer footer footer footer";
     grid-gap: 2rem;
     padding: 2rem;
-    margin: 2rem;
+    margin: auto;
     border-radius: 0.4rem;
     
-    // grid-gap: 1rem;
     background-color: rgba(29, 68, 22, 0.5);
     h1, h2, h3 {
       text-align: center;
-      text-shadow: 1px 1px 1px white;
+      text-shadow: -4px 4px 7px white;
+      font-size: 4vw;
     }
     .show {
-      grid-area: show;
-      // padding-bottom: 0rem;
+      max-width: 940px;
       h1 {
         background-color: #0e610e;
         border-radius: 0.4rem  0.4rem 0rem 0rem;
@@ -46,7 +65,7 @@ body {
       .carousel {
         position: relative;
         height: 600px;
-        width: 100%;
+        width: auto;
         margin: 0 auto;
         #carouselExampleIndicators {
           ol.carousel-indicators {
@@ -94,24 +113,17 @@ body {
           .carousel-caption {
             text-align: center;
             padding: 0rem;
+            .display-4 {
+              color: black;
+            }
           }
         }
       }
-    }
+    }// end .show
     .main {
       background-color: $light-color;
       grid-area: main;
       border-radius: 0.4rem;
-      
-      // .container {
-        //   div {
-          
-          //   }
-          //   a {
-            
-            //   }
-            // }
-            
     }
     .SideBar1 {
       background-color: rgba(172, 255, 47, 0.7);
@@ -131,12 +143,29 @@ body {
       text-align: justify;
       div {padding-bottom: 1 rem;}
     }
-  }
-}
+  }// .grid-container end
+}// body end
                       
-// @media only screen and (min-width: 1100px) {
-//   body {
-//     background-color: lightblue;
-//     z-index: 5;
-//   }
-// }
+@media (max-width: 866px) {
+  body {
+    .grid-container {
+      grid-template-areas: 
+        "show show show show"
+        "main main main main"
+        "SideBar1 SideBar1 SideBar2 SideBar2"
+        "footer footer footer footer";
+    }
+  }// body end
+}
+@media (max-width: 559px) {
+  body {
+    .grid-container {
+      grid-template-areas: 
+        "show show"
+        "main main"
+        "SideBar1 SideBar1"
+        "SideBar2 SideBar2"
+        "footer footer";
+    }
+  }// body end
+}
