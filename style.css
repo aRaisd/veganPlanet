@@ -1,112 +1,65 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  text-align: justify; }
 
 body {
-  background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
-  background-size: cover;
-  font-size: 2.5vw;
-  color: #080808;
-  font-family: "Arial";
-  border-radius: 1.4rem; }
+  width: fit-content; }
   body .grid-container {
+    background-image: url(./img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
     display: grid;
-    grid-template-areas: "show show show show" "main main main SideBar1" "main main main SideBar2" "footer footer footer footer";
-    grid-gap: 2rem;
-    padding: 2rem;
-    margin: auto;
-    border-radius: 0.4rem;
-    background-color: rgba(29, 68, 22, 0.5); }
+    grid-gap: 2.5vw;
+    padding: 3vw;
+    padding-bottom: 1.5vw;
+    grid-template-areas: "navbar" "show" "main" "SideBar1" "SideBar2" "SideBar3" "footer"; }
+    body .grid-container h1, body .grid-container h2, body .grid-container h3 {
+      text-align: center; }
+    body .grid-container h1, body .grid-container h2 {
+      padding: 2vw 1vw 1vw 1vw; }
+    body .grid-container .navbar {
+      grid-area: navbar; }
     body .grid-container .show {
       grid-area: show;
-      height: auto;
-      width: 50vw;
       margin: auto; }
-    body .grid-container .main {
-      grid-area: main;
-      height: auto; }
-    body .grid-container .SideBar1 {
-      grid-area: SideBar1; }
-    body .grid-container .SideBar2 {
-      grid-area: SideBar2; }
-    body .grid-container .footer {
-      grid-area: footer; }
-    body .grid-container h1, body .grid-container h2, body .grid-container h3 {
-      text-align: center;
-      text-shadow: -4px 4px 7px white;
-      font-size: 4vw; }
-    body .grid-container .show {
-      max-width: 940px; }
       body .grid-container .show h1 {
-        background-color: #0e610e;
-        border-radius: 0.4rem  0.4rem 0rem 0rem;
-        margin-bottom: 0rem; }
+        background-color: darkolivegreen;
+        color: gainsboro;
+        margin-bottom: 0;
+        border-radius: 1vw 1vw 0vw 0vw; }
       body .grid-container .show .carousel {
-        position: relative;
-        height: 600px;
-        width: auto;
-        margin: 0 auto; }
-        body .grid-container .show .carousel #carouselExampleIndicators ol.carousel-indicators {
-          margin: 0 auto; }
-          body .grid-container .show .carousel #carouselExampleIndicators ol.carousel-indicators li {
-            height: 10px;
-            width: 10px;
-            margin: 0 4px;
-            border-radius: 50%; }
+        width: 460px;
+        height: 345px; }
         body .grid-container .show .carousel .carousel-inner {
-          height: 100%;
-          border-radius: 0rem 0rem 0.4rem 0.4rem; }
+          height: inherit;
+          border-radius: 0vw 0vw 1vw 1vw; }
           body .grid-container .show .carousel .carousel-inner .carousel-item {
-            height: 100%; }
-        body .grid-container .show .carousel .carousel-control-prev, body .grid-container .show .carousel .carousel-control-next {
-          width: 5%; }
-          body .grid-container .show .carousel .carousel-control-prev .carousel-control-prev-icon, body .grid-container .show .carousel .carousel-control-prev .carousel-control-next-icon, body .grid-container .show .carousel .carousel-control-next .carousel-control-prev-icon, body .grid-container .show .carousel .carousel-control-next .carousel-control-next-icon {
-            border-radius: 50%;
-            background-color: #106817;
-            width: 4rem;
-            height: 2rem; }
-        body .grid-container .show .carousel .carousel-control-prev {
-          left: -3rem; }
-        body .grid-container .show .carousel .carousel-control-next {
-          right: -3rem; }
-        body .grid-container .show .carousel .carousel-item {
-          height: 50vh;
-          min-height: 350px;
-          background: no-repeat center center scroll;
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover; }
-          body .grid-container .show .carousel .carousel-item .carousel-caption {
-            text-align: center;
-            padding: 0rem; }
-            body .grid-container .show .carousel .carousel-item .carousel-caption .display-4 {
-              color: black; }
+            height: inherit;
+            background-repeat: no-repeat;
+            background-size: contain; }
+    body .grid-container .main, body .grid-container .SideBar1, body .grid-container .SideBar2, body .grid-container .SideBar3, body .grid-container .footer {
+      padding-bottom: 3.5vw;
+      border-radius: 1vw; }
     body .grid-container .main {
-      background-color: rgba(133, 231, 171, 0.8);
       grid-area: main;
-      border-radius: 0.4rem; }
+      background-color: #58a32d; }
     body .grid-container .SideBar1 {
-      background-color: rgba(172, 255, 47, 0.7);
       grid-area: SideBar1;
-      border-radius: 0.4rem; }
+      background-color: #7cbd57; }
     body .grid-container .SideBar2 {
-      background-color: rgba(50, 119, 62, 0.7);
       grid-area: SideBar2;
-      border-radius: 0.4rem;
-      padding-bottom: 1rem; }
+      background-color: #69c037; }
+    body .grid-container .SideBar3 {
+      grid-area: SideBar3;
+      background-color: #5cbe24; }
     body .grid-container .footer {
-      grid-area: footer; }
-    body .grid-container div {
-      text-align: justify; }
-      body .grid-container div div {
-        padding-bottom: 1 rem; }
+      padding-bottom: 1vw;
+      grid-area: footer;
+      background-color: #2b471b; }
+      body .grid-container .footer h2 {
+        justify-self: center; }
 
-@media (max-width: 866px) {
+@media only screen and (min-width: 548px) {
   body .grid-container {
-    grid-template-areas: "show show show show" "main main main main" "SideBar1 SideBar1 SideBar2 SideBar2" "footer footer footer footer"; } }
-
-@media (max-width: 559px) {
-  body .grid-container {
-    grid-template-areas: "show show" "main main" "SideBar1 SideBar1" "SideBar2 SideBar2" "footer footer"; } }
+    background-color: 0;
+    grid-template-areas: "navbar navbar navbar" "show show show" "main main main" "SideBar1 SideBar2 SideBar3" "footer footer footer"; } }
