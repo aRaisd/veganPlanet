@@ -14,7 +14,9 @@ body {
     padding-bottom: 1.5vw;
     grid-template-areas: "navbar" "show" "main" "SideBar1" "SideBar2" "SideBar3" "footer"; }
     body .grid-container h1, body .grid-container h2, body .grid-container h3 {
-      text-align: center; }
+      text-align: center;
+      font-variant-caps: all-petite-caps;
+      font-weight: 400; }
     body .grid-container h1, body .grid-container h2 {
       padding: 2vw 1vw 1vw 1vw; }
     body .grid-container .navbar {

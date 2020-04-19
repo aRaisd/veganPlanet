@@ -17,6 +17,8 @@ body {
     background-image: $bg-image;
     h1,h2,h3 {
       text-align: center;
+      font-variant-caps: all-petite-caps;
+      font-weight: 400;
     }
     h1,h2 {
       padding: 2vw 1vw 1vw 1vw;
