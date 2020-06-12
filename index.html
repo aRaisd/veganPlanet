@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,234 +6,258 @@
   <meta charset="utf-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>PlanetVegan</title>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <title>PlanetVegan</title>
+
+  <!-- Favicon and touch icons -->
+  <link rel="shortcut icon" href="assets/ico/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
 </head>
 
-<body>
+<body cz-shortcut-listen="true">
 
-<!-- Navigation -->
-<div class="grid-container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">
-            <img src="./img/logo/vgnLogo.png" alt="">
-          </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-                  <span class="sr-only">(current)</span>
-                </a>
+      <a class="navbar-brand" href="#"><img src="assets/img/logo/vgnLogo.png" alt="VegP icon"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
+        aria-expanded="true">
+        <img src="assets/ico/menu_icon.png" alt="" width="30px" height="30px">
+      </button>
+      <div class="navbar-collapse collapse" id="collapsibleNavbar">
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" data-toggle="pill" href="#dishes">Dishes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" data-toggle="pill" href="#aboutus">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" data-toggle="pill" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
-  <!-- Header -->
-  <!-- <div class=header>
-  </div> -->
-  <!-- carousel -->
-  <div class="show">
-    <h1>VeganPlanet</h1>
-    <div class="carousel">
-      <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6500">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
-        </ol><!-- End carousel-indicators -->
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('img/foods/chickpeas-pancake.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">First Slide</h3>
-              <p class="lead">This is a description for the first slide.</p>
-            </div>
+  </nav> -->
+  <!-- Navigation -->
+  <header>
+    <!-- <h1 class="logo">Logo</h1> -->
+    <img src="assets/img/logo/vgnLogo.png" alt="VegP icon">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#dishes">Dishes</a></li>
+        <li><a href="#aboutus">About us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  </header>
+  <div class="grid-container">
+    <!-- carousel -->
+    <div class="show">
+      <div class="caro">
+        <!-- <div id="carouselExampleIndicators" class="carousel slide carousel-fade pointer-event" data-ride="carousel" data-interval="3500"> -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3500">  
+          <div class="carousel-inner" role="listbox">
+            <!-- Slide 1 - Set the background image for this slide in the line below -->
+            <div class="carousel-item active flip-box">
+              <div class="flip-box-inner">
+                <div class="flip-box-front">
+                  <img src="assets/img/foods/veg-hoisin-sauce-noodles.jpg" style="height: inherit;width: inherit;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3 class="display-4">Hoisin Noodles</h3>
+                  </div>
+                </div><!-- End .flip-box-front -->
+                <div class="flip-box-back">
+                  <div class="carousel-caption d-none d-md-block">
+                    <p class="lead">V Noodles description</p>
+                  </div><!-- End .carousel-caption d-none d-md-block -->
+                </div><!-- End .flip-box-back -->
+              </div><!-- End .flip-box-inner -->
+            </div><!-- End .carousel-item -->
+            <!-- End Slide 1 -->
+            <!-- Slide 2 - Set the background image for this slide in the line below -->
+            <div class="carousel-item flip-box">
+              <div class="flip-box-inner">
+                <div class="flip-box-front">
+                  <img src="assets/img/foods/chickpeas-pancake.jpg" style="height: inherit;width: inherit;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3 class="display-4">Chickpeas Pancake</h3>
+                  </div>
+                </div><!-- End .flip-box-front -->
+                <div class="flip-box-back">
+                  <div class="carousel-caption d-none d-md-block">
+                    <p class="lead">Chickpeas description ........</p>
+                  </div><!-- End .carousel-caption d-none d-md-block -->
+                </div><!-- End .flip-box-back -->
+              </div><!-- End .flip-box-inner -->
+            </div><!-- End .carousel-item -->
+            <!-- End Slide 2 -->
+          </div><!-- End carousel-inner -->
+          <div class="carousel-control">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="4" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="5" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="6" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="7" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="8" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="9" class=""></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="10" class=""></li>
+            </ol><!-- End carousel-indicators -->
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div><!-- End carousel-control -->
+          <div class="pause-cycle-button">
+            <button type="button" class="btn btn-primary btn-customized" style="position: relative;">
+              <i class="fas fa-pause"></i>
+            </button>
           </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/chickpeas-spinach-mushroom-with-rice.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">Second Slide</h3>
-              <p class="lead">This is a description for the second slide.</p>
-            </div>
-          </div>
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/french-fries-with-dipping-sauce-1893556.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">3rd Slide</h3>
-              <p class="lead">This is a description for the 3rd slide.</p>
-            </div>
-          </div>
-          <!-- Slide 4 - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/roasted-garlici-pasta.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">4th Slide</h3>
-              <p class="lead">This is a description for the 4th slide.</p>
-            </div>
-          </div>
-          <!-- Slide 5 - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/sweet-potato-walnut-koftas.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">5th Slide</h3>
-              <p class="lead">This is a description for the 5th slide.</p>
-            </div>
-          </div>
-          <!-- Slide 6 - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/tofu-sesame-eggplant.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">6th Slide</h3>
-              <p class="lead">This is a description for the 6th slide.</p>
-            </div>
-          </div>
-          <!-- Slide 7 - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/veg-hoisin-sauce-noodles.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">7th Slide</h3>
-              <p class="lead">This is a description for the 7th slide.</p>
-            </div>
-          </div>
-          <!-- Slide 8 - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/vegetable-salad-3026808.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">8th Slide</h3>
-              <p class="lead">This is a description for the 8th slide.</p>
-            </div>
-          </div>
-          <!-- Slide 9 - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/close-up-photo-of-cake-3026809.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">9th Slide</h3>
-              <p class="lead">This is a description for the 9th slide.</p>
-            </div>
-          </div>
-          <!-- Slide 10 - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/non-wagen-wheels.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">10th Slide</h3>
-              <p class="lead">This is a description for the 10th slide.</p>
-            </div>
-          </div>
-          <!-- Slide 11 - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/foods/vegan-cupcakes.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="display-4">11th Slide</h3>
-              <p class="lead">This is a description for the 11th slide.</p>
-            </div>
-          </div>
-        </div><!-- End carousel-inner -->
-        <div class="carousel-control">
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div><!-- End carousel-control --> 
-      </div><!-- End #carouselExampleIndicators -->
-    </div><!-- End carousel -->
-  </div><!-- End show -->
-  <!-- <div class="container">
-  </div> -->
-  <!-- main -->
-  <div class="main">
-    <div class="container">
-      <h1>main</h1>
-      <div>Welcome to VegeVeganPlanet. This is your one stop website to explore the most delicious Vegan and Vegetarian food the world has to offer. Simple, wholesome food that can, literally, save the Earth. Step by step recipes presented with an understanding of how what we eat can positively influence the world around us. 
-        This is the website for the aspiring, as well as the committed Vegetarian or Vegan; for the ecologically concerned, as well as for the eco warrior; for those who simply love their pets, to those who wouldn’t hurt a fly! 
-        Here we appreciate every little change you make; from no meat Monday to Veganuary, from flexitarian to vegetarian and vegan. Our aim is to inspire you to your own personal change and we will do this by tempting you with healthy vegetarian and vegan food and with positive encouragement.
-        Take a look around the site. There is loads on offer. We have recipes, environmental information, plus details of our restaurant and partner recommendations. What’s more, we have our very own YouTube channel where we will take you through some mouth-watering VegeVegan food preparation and hopefully keep you entertained and informed along the way.
-        Heal yourself to heal the planet. Save an animal to save the world.
-        
-        <a href="" class="button-1">Read more ...</a>
+        </div><!-- End #carouselExampleIndicators -->
+      </div><!-- End caro -->
+    </div><!-- End show -->
+    <!-- <div class="container">
+    </div> -->
+    <!-- main -->
+    <div class="main">
+      <div class="container">
+        <h1>VeganPlanet</h1>
+        <!-- <h1>main</h1> -->
+        <p>Welcome to VegeVeganPlanet. This is your one stop website to explore the most delicious Vegan and Vegetarian
+          food the world has to offer. Simple, wholesome food that can, literally, save the Earth. Step by step recipes
+          presented with an understanding of how what we eat can positively influence the world around us.
+          This is the website for the aspiring, as well as the committed Vegetarian or Vegan; for the ecologically
+          concerned, as well as for the eco warrior; for those who simply love their pets, to those who wouldn’t hurt a
+          fly!
+          Here we appreciate every little change you make; from no meat Monday to Veganuary, from flexitarian to
+          vegetarian and vegan. Our aim is to inspire you to your own personal change and we will do this by tempting
+          you with healthy vegetarian and vegan food and with positive encouragement.
+          Take a look around the site. There is loads on offer. We have recipes, environmental information, plus details
+          of our restaurant and partner recommendations. What’s more, we have our very own YouTube channel where we will
+          take you through some mouth-watering VegeVegan food preparation and hopefully keep you entertained and
+          informed along the way.
+          Heal yourself to heal the planet. Save an animal to save the world.
+
+          <a href="" class="button-1">Read more ...</a>
+        </p>
       </div>
     </div>
-  </div>
-  
-<!-- <div class="row"> -->
-  <!-- Side bar1 -->
-  <div class="SideBar1">
-    <div class="container">
-      <h1>SideBar1</h1>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloremque esse est nobis aperiam quaerat officiis vitae alias modi. Non molestiae nisi ut ad optio mollitia saepe ab delectus voluptatem?
-        <a href="" class="button-1">Read more ...</a>
-      </div>    
-    </div>
-  </div>
-  <!-- Side bar2 -->
-  <div class="SideBar2">
-    <div class="container">
-      <h1>SideBar2</h1>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsa. Quisquam maxime eligendi harum dolore ullam tempore, a, numquam inventore ipsum temporibus perspiciatis. Praesentium odio libero recusandae non, dolore quam.
-        <a href="" class="button-1">Read more ...</a>
+
+    <!-- artical1 -->
+    <div class="artical1">
+      <div class="container">
+        <h1>Environment</h1>
+        <p>
+          Vegan food is not only the healthy choice it is also the option for those who care
+          about the future of the planet. The environmental impact of meat production is
+          manifold. As world population continues to increase so to has the consumption of
+          meat and animal products. This has resulted in a quarter of the Earth’s available
+          land being used to graze animals, whilst a third of the worlds arable land is used in
+          feed crop production.
+          The associated environmental problems include the overuse of fresh water, green
+          house gas emissions, energy use, pollution of land and watercourses, and
+          dramatic falls in the Earth’s biodiversity due to habitat destruction. At Vegan
+          Planet we recognise that any changes we make towards a plant based diet not
+          only helps ourselves but also safeguards this beautiful Earth for future
+          generations.
+          <a href="" class="button-1">Read more ...</a>
+        </p>
       </div>
     </div>
-  </div>
-  <!-- Side bar3 -->
-  <div class="SideBar3">
-    <div class="container">
-      <h1>SideBar3</h1>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsa. Quisquam maxime eligendi harum dolore ullam tempore, a, numquam inventore ipsum temporibus perspiciatis. Praesentium odio libero recusandae non, dolore quam.
-        <a href="" class="button-1">Read more ...</a>
+    <!-- artical2 -->
+    <div class="artical2">
+      <div class="container">
+        <h1>Health</h1>
+        <p>
+          A plant-based diet has myriad positive health effects on the body and mind. Vegan
+          foods are rich in the nutrients your body needs to grow and flourish. The powerful
+          antioxidant properties of many vegetables also significantly reduce the risks of
+          cancer and other common diseases. From type 2 diabetes to a maintaining a
+          healthy heart and reducing the inflammation of arthritis vegan foods are
+          superfoods.
+          Not only that, eating vegan will make you look good and feel good with healthy
+          skin and a proven effect on your emotional feelgood factor. All in all, if you want to
+          come into your full potential as a person, a vegan lifestyle is for you.
+          <a href="" class="button-1">Read more ...</a>
+        </p>
       </div>
     </div>
-  </div>
-<!-- </div>//row -->
-  
-  <!-- Footer -->
-  <div class="footer">
-    <!-- <div class="container"> -->
+    <!-- artical3 -->
+    <div class="artical3">
+      <div class="container">
+        <h1>artical3</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsa. Quisquam maxime eligendi harum
+          dolore ullam tempore, a, numquam inventore ipsum temporibus perspiciatis. Praesentium odio libero recusandae
+          non, dolore quam.
+          <a href="" class="button-1">Read more ...</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <!-- <div class="container"> -->
       <h2>
-        Copyright 
+        © 2020 VeganPlanet
         <a href="" class="button-1"></a>
       </h2>
-    <!-- </div> -->
+      <!-- </div> -->
+    </div>
   </div>
-</div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
+  <script src="assets/lib/jquery-3.3.1.min.js"></script>
+  <script src="assets/lib/jquery-migrate-3.0.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
-<script src="./lib/bootstrap.bundle.min.js">
-</script>
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <script src="assets/lib/jquery.backstretch.min.js"></script>
+  <script src="assets/lib/waypoints.min.js"></script>
+  <script src="assets/lib/wow.min.js"></script>
+  <script src="scripts.js"></script>
 
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> -->
+  <!-- <script src="assets/lib/bootstrap.bundle.min.js"></script> -->
+  <script>
+    //<![CDATA[
+    document.write('<script src="//' + (location.hostname || 'localhost') +
+      ':35729/livereload.js?snipver=1"><\/script>')
+    //]]>
+  </script>
+  <script src="//localhost:35729/livereload.js?snipver=1"></script>
 </body>
 
 </html>

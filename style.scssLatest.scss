@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-  --background: rgba(85, 84, 84, 0.85);
+  --background: rgba(85, 84, 84, 0.555);
   --bg-image: url(assets/img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
   --bg-imageSMALL: url(assets/img/backgrounds/SMALLphoto-of-green-and-white-plant-3117174.jpg);
 }
@@ -129,163 +129,170 @@ header {
   position: fixed;
   z-index: 999;
   width: 100%;
-  /* changed this from the tutorial video to
-     allow it to gain focus, making it tabbable */
-  .nav-toggle {
-    position: absolute !important;
-    top: -9999px !important;
-    left: -9999px !important;
-  }//.nav-toggle
-  .nav-toggle:focus ~ .nav-toggle-label {
-    outline: 3px solid rgba(lightblue, .75);
-  }
-  .nav-toggle:checked ~ nav {
-    transform: scale(1,1);
-    a {
-      opacity: 1;
-      transition: opacity 250ms ease-in-out 250ms;
-    }
-  }
-  img {
-    padding: 1rem 2rem;
-  }
+}
 
-  .nav-toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 1em;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    span,
-    span::before,
-    span::after {
-      display: block;
-      background: white;
-      height: 2px;
-      width: 2em;
-      border-radius: 2px;
-      position: relative;
-    }
-    
-    span::before,
-    span::after {
-      content: '';
-      position: absolute;
-    }
-    
-    span::before {
-      bottom: 9px;
-    }
-    
-    span::after {
-      top: 9px;
-    }
-  }//.nav-toggle-label
-  nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    background: var(--background);
-    width: 100%;
-    transform: scale(1, 0);
-    transform-origin: top;
-    transition: transform 400ms ease-in-out;
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      li {
-        margin-bottom: 1em;
-        margin-left: 1em;
-        a {
-          color: white;
-          text-decoration: none;
-          font-size: 1.2rem;
-          text-transform: uppercase;
-          opacity: 0;
-          transition: opacity 150ms ease-in-out;
-        }
-        a:hover {
-          color: rgba(57, 235, 12, 1);
-        }
-      }
-    }
-  }//nav
-}//header
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: rgba(57, 235, 12, 1);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
 
 @media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
   header {
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 0.25fr;
-    
-    .nav-toggle-label {
-      display: none;
-    }
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
   
-    // .logo {
-    //   grid-column: 2 / 3;
-    // }
-    
-    nav {
-      // all: unset; /* this causes issues with Edge, since it's unsupported */
-      
-      /* the following lines are not from my video, but add Edge support */
-      position: relative;
-      text-align: left;
-      transition: none;
-      transform: scale(1,1);
-      background: none;
-      top: initial;
-      left: initial;
-      /* end Edge support stuff */
-      
-      grid-column: 3 / 4;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      ul {
-        display: flex;
-        li {
-          margin-left: 3em;
-          margin-bottom: 0;
-          a {
-            opacity: 1;
-            position: relative;
-          }// a
-          a::before {
-            content: '';
-            display: block;
-            height: 5px;
-            background: black;
-            position: absolute;
-            top: -.75em;
-            left: 0;
-            right: 0;
-            transform: scale(0, 1);
-            transition: transform ease-in-out 250ms;
-          }// a::before
-          
-          a:hover::before {
-            transform: scale(1,1);
-          }// a:hover::before
-        }// li
-      }// ul
-      
-      
-    }//nav
-    
-  }//header  
+  .logo {
+    grid-column: 2 / 3;
+  }
   
-}//@media screen and (min-width: 800px)
+  nav {
+    // all: unset; /* this causes issues with Edge, since it's unsupported */
+    
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+    
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+  
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+  
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+  
+  nav a:hover::before {
+    transform: scale(1,1);
+  }
+}
 
 
   .grid-container {
     display: grid;
     margin: 0 2vw;
-    padding-top: 4.5rem;
+    padding-top: 2.5rem;
     grid-gap: 2.25vw;
 
     .show {
@@ -316,7 +323,7 @@ header {
             
             //.carousel-item
             
-            .flip-box:active .flip-box-inner {
+            .flip-box:hover .flip-box-inner {
               transform: rotateY(180deg);
             }
             
