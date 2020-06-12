@@ -22,105 +22,6 @@ body {
   width: fit-content;
   text-align: justify;
 
-   nav.navbar {
-  //   padding: 0.5rem;
-  //   padding-bottom: 0;
-
-  //   .container {
-  //     display: inline;
-  //     max-width: 96vw;
-
-  //     //Logo Icon
-  //     a.navbar-brand {
-  //       width: inherit;
-  //       margin: auto;
-  //       vertical-align: middle;
-
-  //       img {
-  //         margin: auto;
-  //         border-radius: 36px;
-  //         //box-shadow: 3px 1px 1px 0 rgba(175, 180, 250, 0.9), 0 6px 33px 0 rgba(200, 200, 200, .5);
-  //         // box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
-  //         background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .6) 0%, transparent 100%);
-  //         background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
-  //         background-image: -o-linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
-  //         background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
-  //         display: block;
-  //         width: 60px;
-  //         height: 60px;
-  //         /* margin: 30px auto 0; */
-  //         background-color: #61c419;
-  //       }
-
-  //     }
-
-  //     //Toggle Btn : display:none
-  //     .navbar-toggler {
-  //       display: none;
-  //       height: 59px;
-  //       background-color: var(--background);// #5453538f;
-  //       padding: 0rem 0.8rem;
-  //       color: black;
-  //       font-weight: 700;
-  //       background: -moz-linear-gradient(top, #b4c1ca 3%, #616a72 14%);
-  //       background: -webkit-linear-gradient(top, #b4c1ca 3%, #616a72 14%);
-  //       background: linear-gradient(to bottom, #b4c1ca 3%, #616a72 14%);
-  //       border-color: transparent;
-  //       border: 1px solid transparent;
-  //     }
-
-  //     .collapsed {
-  //       background: -moz-linear-gradient(top, #cedce7 2%, #cedce7 0%, #cedce7 3%, #cedce7 0%, #505f66 85%);
-  //       background: -webkit-linear-gradient(top, #cedce7 2%, #cedce7 0%, #cedce7 3%, #cedce7 0%, #505f66 85%);
-  //       background: linear-gradient(to bottom, #cedce7 2%, #cedce7 0%, #cedce7 3%, #cedce7 0%, #505f66 85%);
-  //       border: 0px;
-  //     }
-
-  //     //Collapse section
-  //     #collapsibleNavbar {
-  //       justify-content: flex-end;
-  //       padding: 0.25rem 0rem;
-  //       display: block;
-
-  //       ul {
-  //         display: block;
-  //         text-align: center;
-
-  //         li {
-  //           margin-bottom: .25rem;
-  //           padding: 0.1rem 0.1rem;
-
-  //           a {
-  //             color: black;
-  //             border-color: unset;
-  //             font-weight: 700;
-  //             background: -moz-linear-gradient(top, #cedce7 2%, #cedce7 0%, #cedce7 3%, #cedce7 0%, #505f66 85%);
-  //             background: -webkit-linear-gradient(top, #cedce7 2%, #cedce7 0%, #cedce7 3%, #cedce7 0%, #505f66 85%);
-  //             background: linear-gradient(to bottom, #cedce7 2%, #cedce7 0%, #cedce7 3%, #cedce7 0%, #505f66 85%);
-  //             border-color: transparent;
-  //             width: -webkit-fill-available;
-  //           }
-
-  //           a:active,
-  //           a:visited {
-  //             background: -moz-linear-gradient(top, #b4c1ca 3%, #616a72 14%);
-  //             background: -webkit-linear-gradient(top, #b4c1ca 3%, #616a72 14%);
-  //             background: linear-gradient(to bottom, #b4c1ca 3%, #616a72 14%);
-  //           }
-  //         }
-
-  //         //li
-  //       }
-
-  //       //ul
-  //     }
-
-  //     //#collapsi....
-  //   }
-
-  //   //.container
-  }
-  // //nav.navbar
 /* navigation styles start here */
 
 header {
@@ -415,16 +316,16 @@ header {
               opacity: .5;
               transition: opacity .15s ease;
 
-              span {
-                .carousel-control-prev-icon {}
+              // span {
+              //   .carousel-control-prev-icon {}
 
-                //.carousel-control-prev-icon
-                .sr-only {}
+              //   //.carousel-control-prev-icon
+              //   .sr-only {}
 
-                //.sr-only
-              }
+              //   //.sr-only
+              // }
 
-              //span
+              // //span
             }
 
             //.carousel-control-prev, .carousel-control-next  
