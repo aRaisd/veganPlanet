@@ -29,49 +29,23 @@
 
 <body cz-shortcut-listen="true">
 
-  <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#"><img src="assets/img/logo/vgnLogo.png" alt="VegP icon"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
-        aria-expanded="true">
-        <img src="assets/ico/menu_icon.png" alt="" width="30px" height="30px">
-      </button>
-      <div class="navbar-collapse collapse" id="collapsibleNavbar">
-        <ul class="nav nav-pills" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#dishes">Dishes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#aboutus">About us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-  <!-- Navigation -->
-  <header>
-    <!-- <h1 class="logo">Logo</h1> -->
-    <img src="assets/img/logo/vgnLogo.png" alt="VegP icon">
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#dishes">Dishes</a></li>
-        <li><a href="#aboutus">About us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <label for="nav-toggle" class="nav-toggle-label">
-      <span></span>
-    </label>
-  </header>
-  <div class="grid-container">
+  <nav class="nav">
+    <a class="logo" href="#"><img class="logoImg" src="assets/img/logo/vgnLogo.png" alt="VegP icon"></a>
+    <!-- input checkbox id="menu-btn" to link to it's Label -->
+    <input type="checkbox" class="menu-btn" id="menu-btn">        
+    <!-- Label for="menu-btn" links input checkbox with id="menu-btn" -->
+    <label class="menu-icon" for="menu-btn"><span class="bars"></span></label>
+    <ul class="menu">
+      <li class="menu-item" ><a class="anchor-text" href="#home">Home</a></li>
+      <li class="menu-item" ><a class="anchor-text" href="#dishes">Dishes</a></li>
+      <li class="menu-item" ><a class="anchor-text" href="#aboutus">About us</a></li>
+      <li class="menu-item" ><a class="anchor-text" href="#contact">Contact</a> </li>
+      <li class="menu-item button" targt="menu-item"><a class="anchor-text" href="#">Login</a></li>
+      <li class="menu-item button secondary" targt="menu-item"><a class="anchor-text" href="#">Sign Up</a></li>
+    </ul>
+    </nav><!-- End nav -->
+
+    <div class="grid-container">
     <!-- carousel -->
     <div class="show">
       <div class="caro">
