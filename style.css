@@ -1,306 +1,330 @@
+/******************************************/
+/************ Default settings ************/
+/******************************************/
+/************ variables ************/
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,600");
 :root {
-  --background: rgba(85, 84, 84, 0.85);
-  --bg-image: url(assets/img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
-  --bg-imageSMALL: url(assets/img/backgrounds/SMALLphoto-of-green-and-white-plant-3117174.jpg); }
+  --bg-color-prim: rgba(74, 74, 80, 0.95);
+  --bg-color-scnd: rgba(85, 80, 95, 0.75);
+  --bg-color-thrd: #000;
+  --background: rgba(74, 74, 80, 0.432);
+  --bg-image: url(assets/img/backgrounds/photo-of-green-and-white-plant-3117174.jpg); }
 
-*, *::before, *::after {
+/************ Reset default ************/
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
+/************ Default settings ************/
 body {
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: var(--bg-imageSMALL);
-  background-repeat: no-repeat;
-  width: fit-content;
-  text-align: justify;
-  /* navigation styles start here */ }
-  body header {
-    background: var(--background);
-    text-align: center;
-    position: fixed;
-    z-index: 999;
+  font-family: Arial, Helvetica,sans-serif;
+  background-image: var(--bg-image);
+  background-color: var(--bg-color-prim); }
+
+/****End body******/
+.nav {
+  background-color: var(--bg-color-prim);
+  box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.7);
+  border-style: outset;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  padding: .5rem 1rem; }
+  .nav .menu-btn {
+    display: none; }
+  .nav .menu {
+    opacity: 0;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    margin: auto;
     width: 100%;
-    /* changed this from the tutorial video to
-     allow it to gain focus, making it tabbable */ }
-    body header .nav-toggle {
-      position: absolute !important;
-      top: -9999px !important;
-      left: -9999px !important; }
-    body header .nav-toggle:focus ~ .nav-toggle-label {
-      outline: 3px solid rgba(173, 216, 230, 0.75); }
-    body header .nav-toggle:checked ~ nav {
-      transform: scale(1, 1); }
-      body header .nav-toggle:checked ~ nav a {
-        opacity: 1;
-        transition: opacity 250ms ease-in-out 250ms; }
-    body header img {
-      padding: 1rem 2rem; }
-    body header .nav-toggle-label {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin-left: 1em;
-      height: 100%;
-      display: flex;
-      align-items: center; }
-      body header .nav-toggle-label span,
-      body header .nav-toggle-label span::before,
-      body header .nav-toggle-label span::after {
-        display: block;
-        background: white;
-        height: 2px;
-        width: 2em;
-        border-radius: 2px;
-        position: relative; }
-      body header .nav-toggle-label span::before,
-      body header .nav-toggle-label span::after {
-        content: '';
-        position: absolute; }
-      body header .nav-toggle-label span::before {
-        bottom: 9px; }
-      body header .nav-toggle-label span::after {
-        top: 9px; }
-    body header nav {
-      position: absolute;
-      text-align: left;
-      top: 100%;
-      left: 0;
-      background: var(--background);
-      width: 100%;
-      transform: scale(1, 0);
-      transform-origin: top;
-      transition: transform 400ms ease-in-out; }
-      body header nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none; }
-        body header nav ul li {
-          margin-bottom: 1em;
-          margin-left: 1em; }
-          body header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: opacity 150ms ease-in-out; }
-          body header nav ul li a:hover {
-            color: #39eb0c; }
-  @media screen and (min-width: 800px) {
-    body header {
-      display: grid;
-      grid-template-columns: 1fr auto minmax(600px, 3fr) 0.25fr; }
-      body header .nav-toggle-label {
-        display: none; }
-      body header nav {
-        /* the following lines are not from my video, but add Edge support */
-        position: relative;
-        text-align: left;
-        transition: none;
-        transform: scale(1, 1);
-        background: none;
-        top: initial;
-        left: initial;
-        /* end Edge support stuff */
-        grid-column: 3 / 4;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center; }
-        body header nav ul {
-          display: flex; }
-          body header nav ul li {
-            margin-left: 3em;
-            margin-bottom: 0; }
-            body header nav ul li a {
-              opacity: 1;
-              position: relative; }
-            body header nav ul li a::before {
-              content: '';
-              display: block;
-              height: 5px;
-              background: black;
-              position: absolute;
-              top: -.75em;
-              left: 0;
-              right: 0;
-              transform: scale(0, 1);
-              transition: transform ease-in-out 250ms; }
-            body header nav ul li a:hover::before {
-              transform: scale(1, 1); } }
-  body .grid-container {
-    display: grid;
-    margin: 0 2vw;
-    padding-top: 4.5rem;
-    grid-gap: 2.25vw;
-    grid-template-areas: "show" "main" "artical1" "artical2" "artical3" "footer"; }
-    body .grid-container .show {
-      grid-area: show;
-      width: 96vw;
-      padding: 3rem 1rem;
-      margin: auto; }
-      body .grid-container .show .caro {
-        height: 72vw; }
-        body .grid-container .show .caro #carouselExampleIndicators {
-          height: inherit; }
-          body .grid-container .show .caro #carouselExampleIndicators .carousel-inner {
-            border-radius: .25rem .25rem 0 0;
-            position: relative;
-            width: 100%;
-            overflow: hidden;
+    max-height: 0;
+    transition: all .4s ease-out; }
+  .nav .anchor-text {
+    display: block;
+    padding: 1rem;
+    border-right: 1px solid #f5e0e0;
+    width: 100%;
+    color: #c9bdbd;
+    text-decoration: block;
+    text-align: center; }
+    .nav .anchor-text:hover {
+      color: #ececf0;
+      background-color: grey;
+      text-decoration: block; }
+  .nav .logo {
+    float: left;
+    display: block; }
+
+/****End .nav******/
+.grid-container {
+  display: grid;
+  margin: 0 2vw;
+  padding-top: 4.5rem;
+  grid-gap: 2.25vw;
+  grid-template-areas: "show" "main" "artical1" "artical2" "artical3" "footer"; }
+  .grid-container .show {
+    grid-area: show;
+    width: 96vw;
+    padding: 3rem 1rem;
+    margin: auto; }
+    .grid-container .show .caro {
+      height: 72vw; }
+      .grid-container .show .caro #carouselExampleIndicators {
+        height: inherit; }
+        .grid-container .show .caro #carouselExampleIndicators .carousel-inner {
+          border-radius: .25rem .25rem 0 0;
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+          height: inherit;
+          top: 0px; }
+          .grid-container .show .caro #carouselExampleIndicators .carousel-inner .carousel-item {
+            background-size: cover;
+            width: inherit;
+            height: inherit; }
+          .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box:active .flip-box-inner {
+            transform: rotateY(180deg); }
+          .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box {
+            background-color: transparent;
             height: inherit;
-            top: 0px; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .carousel-item {
-              background-size: cover;
-              width: inherit;
-              height: inherit; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box:active .flip-box-inner {
-              transform: rotateY(180deg); }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box {
-              background-color: transparent;
+            perspective: 1000px; }
+            .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner {
+              display: block;
+              position: relative;
               height: inherit;
-              perspective: 1000px; }
-              body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner {
-                display: block;
-                position: relative;
-                height: inherit;
-                text-align: center;
-                transition: transform 0.7s;
-                transform-style: preserve-3d; }
-                body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front,
-                body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back {
-                  position: absolute;
-                  width: 100%;
-                  height: 100%;
-                  background-color: #bbb;
-                  backface-visibility: unset;
-                  -webkit-backface-visibility: unset;
-                  -moz-backface-visibility: unset;
-                  color: black; }
-                  body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .d-none,
-                  body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .d-none {
-                    display: inline-flex !important; }
-                  body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .carousel-caption,
-                  body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .carousel-caption {
-                    bottom: -20px;
-                    position: sticky;
-                    right: 0%;
-                    left: 0%; }
-                    body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .carousel-caption .display-4,
-                    body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .carousel-caption .display-4 {
-                      line-height: 1.2;
-                      width: 100%;
-                      font-size: 1.5rem;
-                      font-weight: 400; }
-                body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back {
-                  background-color: #555;
-                  color: white;
-                  transform: rotateY(180deg); }
-          body .grid-container .show .caro #carouselExampleIndicators .carousel-control {
-            border-radius: 0 0 .25rem .25rem;
-            background-color: #343a40;
-            height: 2rem;
-            width: 100%; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev,
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next {
-              position: inherit;
-              height: 2rem;
-              bottom: 12px;
-              z-index: 1;
-              display: -ms-inline-flexbox;
-              display: inline-flex;
-              -ms-flex-align: center;
-              align-items: center;
-              -ms-flex-pack: center;
-              justify-content: center;
-              width: 10%;
-              color: #fff;
               text-align: center;
-              opacity: .5;
-              transition: opacity .15s ease; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev {
-              float: left; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-indicators {
-              margin: 4px 0;
-              width: 80%;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              z-index: 15;
-              display: -ms-flexbox;
-              display: inline-flex;
-              -ms-flex-pack: center;
-              justify-content: center;
-              padding-left: 0;
-              list-style: none;
-              position: relative; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next {
-              float: right; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev:hover,
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next:hover {
-              color: #fff;
-              text-decoration: none;
-              outline: 0;
-              opacity: .9; }
-          body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button {
-            background-color: var(--background);
-            padding: 0.15rem 1rem;
-            border-radius: 0.25rem;
-            margin: auto;
-            width: fit-content; }
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized {
-              width: 2rem;
-              height: 2rem;
-              padding: 0;
-              background: #fff;
-              border: 0;
-              border-radius: 50%;
-              font-family: 'Open Sans', sans-serif;
-              font-size: 15px;
-              font-weight: 400;
-              color: #555;
-              line-height: 2rem;
-              box-shadow: none; }
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:hover,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:active,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:focus,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:active:focus,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized.active:focus,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn.btn-primary:not(:disabled):not(.disabled):active,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn.btn-primary:not(:disabled):not(.disabled):active:focus {
-              outline: 0;
-              background: #ccc;
-              background: rgba(255, 255, 255, 0.5);
-              border: 0;
-              color: #555;
-              box-shadow: none; }
-    body .grid-container .main {
-      grid-area: main;
-      background-color: rgba(65, 99, 24, 0.94); }
-    body .grid-container .artical1 {
-      grid-area: artical1;
-      background-color: rgba(85, 129, 32, 0.94); }
-    body .grid-container .artical2 {
-      grid-area: artical2;
-      background-color: rgba(89, 151, 14, 0.94); }
-    body .grid-container .artical3 {
-      grid-area: artical3;
-      background-color: rgba(110, 192, 9, 0.94); }
-    body .grid-container .footer {
-      grid-area: footer; }
-  body h1,
-  body h2,
-  body h3 {
-    color: #080808;
-    text-align: center;
-    text-shadow: 1px 1px 2px white, 0 0 25px #7373a7, 0 0 5px #095f23; }
-  body h1 {
-    margin: 0.7rem 0; }
-  body h3 {
-    color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; }
-  body p::first-letter {
-    font-weight: 800;
-    font-size: xx-large; }
+              transition: transform 0.7s;
+              transform-style: preserve-3d; }
+              .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front,
+              .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #bbb;
+                backface-visibility: unset;
+                -webkit-backface-visibility: unset;
+                -moz-backface-visibility: unset;
+                color: black; }
+                .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .d-none,
+                .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .d-none {
+                  display: inline-flex !important; }
+                .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .carousel-caption,
+                .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .carousel-caption {
+                  bottom: -20px;
+                  position: sticky;
+                  right: 0%;
+                  left: 0%; }
+                  .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .carousel-caption .display-4,
+                  .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .carousel-caption .display-4 {
+                    line-height: 1.2;
+                    width: 100%;
+                    font-size: 1.5rem;
+                    font-weight: 400; }
+              .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back {
+                background-color: #555;
+                color: white;
+                transform: rotateY(180deg); }
+        .grid-container .show .caro #carouselExampleIndicators .carousel-control {
+          border-radius: 0 0 .25rem .25rem;
+          background-color: #343a40;
+          height: 2rem;
+          width: 100%; }
+          .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev,
+          .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next {
+            position: inherit;
+            height: 2rem;
+            bottom: 12px;
+            z-index: 1;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 10%;
+            color: #fff;
+            text-align: center;
+            opacity: .5;
+            transition: opacity .15s ease; }
+          .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev {
+            float: left; }
+          .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-indicators {
+            margin: 4px 0;
+            width: 80%;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 15;
+            display: -ms-flexbox;
+            display: inline-flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            padding-left: 0;
+            list-style: none;
+            position: relative; }
+          .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next {
+            float: right; }
+          .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev:hover,
+          .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next:hover {
+            color: #fff;
+            text-decoration: none;
+            outline: 0;
+            opacity: .9; }
+        .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button {
+          background-color: var(--background);
+          padding: 0.15rem 1rem;
+          border-radius: 0.25rem;
+          margin: auto;
+          width: fit-content; }
+          .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized {
+            width: 2rem;
+            height: 2rem;
+            padding: 0;
+            background: #fff;
+            border: 0;
+            border-radius: 50%;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #555;
+            line-height: 2rem;
+            box-shadow: none; }
+          .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:hover,
+          .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:active,
+          .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:focus,
+          .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:active:focus,
+          .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized.active:focus,
+          .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn.btn-primary:not(:disabled):not(.disabled):active,
+          .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn.btn-primary:not(:disabled):not(.disabled):active:focus {
+            outline: 0;
+            background: #ccc;
+            background: rgba(255, 255, 255, 0.5);
+            border: 0;
+            color: #555;
+            box-shadow: none; }
+  .grid-container .main {
+    grid-area: main;
+    background-color: rgba(65, 99, 24, 0.94); }
+  .grid-container .artical1 {
+    grid-area: artical1;
+    background-color: rgba(85, 129, 32, 0.94); }
+  .grid-container .artical2 {
+    grid-area: artical2;
+    background-color: rgba(89, 151, 14, 0.94); }
+  .grid-container .artical3 {
+    grid-area: artical3;
+    background-color: rgba(110, 192, 9, 0.94); }
+  .grid-container .footer {
+    grid-area: footer; }
+
+/****End .container******/
+h1,
+h2,
+h3 {
+  color: #080808;
+  text-align: center;
+  text-shadow: 1px 1px 2px white, 0 0 25px #7373a7, 0 0 5px #095f23; }
+
+h1 {
+  margin: 0.7rem 0; }
+
+h3 {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; }
+
+p::first-letter {
+  font-weight: 800;
+  font-size: xx-large; }
+
+/************ End Default settings ************/
+/************ Mobile view settings ************/
+@media all and (max-width: 540px) {
+  .nav .menu {
+    height: 0; }
+  .nav .menu-icon {
+    height: 2rem;
+    width: 2rem;
+    border-radius: .2rem;
+    margin-right: 0rem;
+    padding: 1rem .8rem 1.5rem .8rem;
+    background-color: rgba(55, 219, 157, 0.85);
+    margin-left: auto;
+    /**to get the menu-icon to float right**/
+    cursor: pointer; }
+  .nav .bars {
+    position: relative;
+    right: 7px;
+    top: 4px; }
+  .nav .bars, .nav .bars::before, .nav .bars::after {
+    background-color: #333;
+    display: block;
+    height: 2px;
+    width: 20px;
+    transition: background .3s ease-out; }
+  .nav .bars::before, .nav .bars::after {
+    transition: all .3s ease-out;
+    position: absolute;
+    content: ""; }
+  .nav .bars::before {
+    top: 6px; }
+  .nav .bars::after {
+    top: -6px; }
+  .nav .menu-btn:checked ~ .menu-icon .bars::before {
+    transform: rotate(-45deg);
+    top: 0; }
+  .nav .menu-btn:checked ~ .menu-icon .bars {
+    background: transparent; }
+  .nav .menu-btn:checked ~ .menu-icon .bars::after {
+    transform: rotate(45deg);
+    top: 0; }
+  .nav .menu-btn:checked ~ .menu {
+    opacity: 1;
+    height: 100%;
+    max-height: 32rem; }
+  .nav .anchor-text {
+    padding: .5rem 1rem;
+    border: none;
+    text-decoration: none; }
+  /****End .nav******/
+  .grid-container {
+    display: block; }
+    .grid-container .show {
+      display: block; }
+    .grid-container .main {
+      display: block; }
+    .grid-container .artical1 {
+      display: block; }
+    .grid-container .artical2 {
+      display: block; }
+    .grid-container .artical3 {
+      display: block; }
+    .grid-container .footer {
+      display: block; }
+  /****End .grid-container******/ }
+
+/************ End Mobile view settings ************/
+/************ TABLET view settings ************/
+@media all and (min-width: 541px) {
+  .nav .menu-icon {
+    display: block; }
+  .nav .menu {
+    opacity: 1;
+    clear: block;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0;
+    max-height: 100%;
+    width: fit-content; }
+  .nav .anchor-text {
+    padding: .5rem .5rem; }
+  /****End .nav******/ }
+
+/************ End TABLET view settings ************/

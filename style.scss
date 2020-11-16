@@ -1,524 +1,709 @@
-// Variables -----------------------
+/******************************************/ 
+/************ Default settings ************/ 
+/******************************************/ 
+
+/************ variables ************/
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-  --background: rgba(85, 84, 84, 0.85);
+  --bg-color-prim: rgba(74, 74, 80, 0.95);
+  --bg-color-scnd: rgba(85, 80, 95, 0.75);
+  --bg-color-thrd: #000;
+  --background: rgba(74, 74, 80, 0.432);
   --bg-image: url(assets/img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
-  --bg-imageSMALL: url(assets/img/backgrounds/SMALLphoto-of-green-and-white-plant-3117174.jpg);
 }
 
-// -----------------------------------------
-*, *::before, *::after {
+/************ Reset default ************/
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/************ Default settings ************/
 body {
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: var(--bg-imageSMALL);
-  background-repeat: no-repeat;
-  width: fit-content;
-  text-align: justify;
+  // background-attachment: fixed;
+  // background-size: cover;
+  // background-image: var(--bg-imageSMALL);
+  // background-repeat: no-repeat;
+  // width: fit-content;
+  // text-align: justify;
+  font-family: Arial, Helvetica,sans-serif;
+  background-image: var(--bg-image);
+  background-color: var(--bg-color-prim);
+}
+/****End body******/
 
-/* navigation styles start here */
-
-header {
-  background: var(--background);
-  text-align: center;
-  position: fixed;
-  z-index: 999;
+.nav {
+  background-color: var(--bg-color-prim);
+  box-shadow: 2px 1px 4px 0 rgba(0,0,0,.7);
+  border-style: outset;
+  position: fixed;//fix nav to the top
   width: 100%;
-  /* changed this from the tutorial video to
-     allow it to gain focus, making it tabbable */
-  .nav-toggle {
-    position: absolute !important;
-    top: -9999px !important;
-    left: -9999px !important;
-  }//.nav-toggle
-  .nav-toggle:focus ~ .nav-toggle-label {
-    outline: 3px solid rgba(lightblue, .75);
+  z-index: 3;
+  padding: .5rem 1rem;
+  .menu-btn {
+    display: none;
   }
-  .nav-toggle:checked ~ nav {
-    transform: scale(1,1);
-    a {
-      opacity: 1;
-      transition: opacity 250ms ease-in-out 250ms;
-    }
-  }
-  img {
-    padding: 1rem 2rem;
-  }
-
-  .nav-toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 1em;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    span,
-    span::before,
-    span::after {
-      display: block;
-      background: white;
-      height: 2px;
-      width: 2em;
-      border-radius: 2px;
-      position: relative;
-    }
-    
-    span::before,
-    span::after {
-      content: '';
-      position: absolute;
-    }
-    
-    span::before {
-      bottom: 9px;
-    }
-    
-    span::after {
-      top: 9px;
-    }
-  }//.nav-toggle-label
-  nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    background: var(--background);
+  .menu {
+    opacity: 0;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style: none;//turn off bullet points
+    overflow: hidden;
+    margin: auto;
     width: 100%;
-    transform: scale(1, 0);
-    transform-origin: top;
-    transition: transform 400ms ease-in-out;
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      li {
-        margin-bottom: 1em;
-        margin-left: 1em;
-        a {
-          color: white;
-          text-decoration: none;
-          font-size: 1.2rem;
-          text-transform: uppercase;
-          opacity: 0;
-          transition: opacity 150ms ease-in-out;
-        }
-        a:hover {
-          color: rgba(57, 235, 12, 1);
-        }
-      }
-    }
-  }//nav
-}//header
-
-@media screen and (min-width: 800px) {
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 0.25fr;
-    
-    .nav-toggle-label {
-      display: none;
-    }
+    max-height: 0;
+    transition: all .4s ease-out;
+  }
   
-    // .logo {
-    //   grid-column: 2 / 3;
-    // }
-    
-    nav {
-      // all: unset; /* this causes issues with Edge, since it's unsupported */
-      
-      /* the following lines are not from my video, but add Edge support */
-      position: relative;
-      text-align: left;
-      transition: none;
-      transform: scale(1,1);
-      background: none;
-      top: initial;
-      left: initial;
-      /* end Edge support stuff */
-      
-      grid-column: 3 / 4;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      ul {
-        display: flex;
-        li {
-          margin-left: 3em;
-          margin-bottom: 0;
-          a {
-            opacity: 1;
-            position: relative;
-          }// a
-          a::before {
-            content: '';
-            display: block;
-            height: 5px;
-            background: black;
-            position: absolute;
-            top: -.75em;
-            left: 0;
-            right: 0;
-            transform: scale(0, 1);
-            transition: transform ease-in-out 250ms;
-          }// a::before
-          
-          a:hover::before {
-            transform: scale(1,1);
-          }// a:hover::before
-        }// li
-      }// ul
-      
-      
-    }//nav
-    
-  }//header  
-  
-}//@media screen and (min-width: 800px)
+  .anchor-text {
+    display: block;
+    // outline: 1px solid red;
+    padding: 1rem;
+    border-right: 1px solid rgb(245, 224, 224);
+    // margin: auto;
+    width: 100%;
+    color: rgb(201, 189, 189);
+    text-decoration: block;//get rid of underlines
+    text-align: center;
+    &:hover {
+      color: rgb(236, 236, 240);
+      background-color: grey;
+      text-decoration: block;
+    }
+  }
+  .logo {
+    float: left;
+    display: block;
+  }
+}
+/****End .nav******/
 
+.grid-container {
+  display: grid;
+  margin: 0 2vw;
+  padding-top: 4.5rem;
+  grid-gap: 2.25vw;
 
-  .grid-container {
-    display: grid;
-    margin: 0 2vw;
-    padding-top: 4.5rem;
-    grid-gap: 2.25vw;
+  .show {
+    grid-area: show;
+    width: 96vw;
+    padding: 3rem 1rem;
+    margin: auto;
 
-    .show {
-      grid-area: show;
-      width: 96vw;
-      padding: 3rem 1rem;
-      margin: auto;
+    .caro {
+      height: 72vw;
 
-      .caro {
-        height: 72vw;
+      #carouselExampleIndicators {
+        height: inherit;
 
-        #carouselExampleIndicators {
+        .carousel-inner {
+          border-radius: .25rem .25rem 0 0 ;
+          position: relative;
+          width: 100%;
+          overflow: hidden;
           height: inherit;
-
-          .carousel-inner {
-            border-radius: .25rem .25rem 0 0 ;
-            position: relative;
-            width: 100%;
-            overflow: hidden;
+          top: 0px;
+          
+          .carousel-item {
+            background-size: cover;
+            width: inherit;
             height: inherit;
-            top: 0px;
+          }
+          
+          //.carousel-item
+          
+          .flip-box:active .flip-box-inner {
+            transform: rotateY(180deg);
+          }
+          
+          //.flip-box:hover .flip-box-inner
+          
+          .flip-box {
+            background-color: transparent;
+            height: inherit;
+            perspective: 1000px;
             
-            .carousel-item {
-              background-size: cover;
-              width: inherit;
+            .flip-box-inner {
+              display: block;
+              position: relative;
               height: inherit;
-            }
-            
-            //.carousel-item
-            
-            .flip-box:active .flip-box-inner {
-              transform: rotateY(180deg);
-            }
-            
-            //.flip-box:hover .flip-box-inner
-            
-            .flip-box {
-              background-color: transparent;
-              height: inherit;
-              perspective: 1000px;
+              text-align: center;
+              transition: transform 0.7s;
+              transform-style: preserve-3d;
               
-              .flip-box-inner {
-                display: block;
-                position: relative;
-                height: inherit;
-                text-align: center;
-                transition: transform 0.7s;
-                transform-style: preserve-3d;
+              .flip-box-front,
+              .flip-box-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #bbb;
+                backface-visibility: unset;
+                -webkit-backface-visibility: unset;
+                -moz-backface-visibility: unset;
+                color: black;
                 
-                .flip-box-front,
-                .flip-box-back {
-                  position: absolute;
-                  width: 100%;
-                  height: 100%;
-                  background-color: #bbb;
-                  backface-visibility: unset;
-                  -webkit-backface-visibility: unset;
-                  -moz-backface-visibility: unset;
-                  color: black;
-                  
-                  .d-none {
-                    display: inline-flex !important;
-                  }
-                  
-                  .carousel-caption {
-                    bottom: -20px;
-                    position: sticky;
-                    right: 0%;
-                    left: 0%;
-                    
-                    .display-4 {
-                      line-height: 1.2;
-                      width: 100%;
-                      font-size: 1.5rem;
-                      font-weight: 400;
-                    }
-                    
-                    //.display-4
-                    // p {}//p
-                  }
-                  
+                .d-none {
+                  display: inline-flex !important;
                 }
                 
-                //.flip-box-front
-                
-                .flip-box-back {
-                  background-color: #555;
-                  color: white;
-                  transform: rotateY(180deg);
+                .carousel-caption {
+                  bottom: -20px;
+                  position: sticky;
+                  right: 0%;
+                  left: 0%;
+                  
+                  .display-4 {
+                    line-height: 1.2;
+                    width: 100%;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                  }
+                  
+                  //.display-4
+                  // p {}//p
                 }
-                
-                //.flip-box-back
                 
               }
               
-              //.flip-box-inner
+              //.flip-box-front
+              
+              .flip-box-back {
+                background-color: #555;
+                color: white;
+                transform: rotateY(180deg);
+              }
+              
+              //.flip-box-back
+              
             }
             
-            //.flip-box
-            
-            
+            //.flip-box-inner
           }
           
-          // border-radius: .25rem .25rem 0 0 ;
-          //.carousel-inner
-          .carousel-control {
-            border-radius: 0 0 .25rem .25rem;
-            background-color: #343a40;
+          //.flip-box
+          
+          
+        }
+        
+        // border-radius: .25rem .25rem 0 0 ;
+        //.carousel-inner
+        .carousel-control {
+          border-radius: 0 0 .25rem .25rem;
+          background-color: #343a40;
+          height: 2rem;
+          width: 100%;
+
+          .carousel-control-prev,
+          .carousel-control-next {
+            position: inherit;
             height: 2rem;
-            width: 100%;
+            bottom: 12px;
+            z-index: 1;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 10%;
+            color: #fff;
+            text-align: center;
+            opacity: .5;
+            transition: opacity .15s ease;
 
-            .carousel-control-prev,
-            .carousel-control-next {
-              position: inherit;
-              height: 2rem;
-              bottom: 12px;
-              z-index: 1;
-              display: -ms-inline-flexbox;
-              display: inline-flex;
-              -ms-flex-align: center;
-              align-items: center;
-              -ms-flex-pack: center;
-              justify-content: center;
-              width: 10%;
-              color: #fff;
-              text-align: center;
-              opacity: .5;
-              transition: opacity .15s ease;
+            // span {
+            //   .carousel-control-prev-icon {}
 
-              // span {
-              //   .carousel-control-prev-icon {}
+            //   //.carousel-control-prev-icon
+            //   .sr-only {}
 
-              //   //.carousel-control-prev-icon
-              //   .sr-only {}
+            //   //.sr-only
+            // }
 
-              //   //.sr-only
-              // }
-
-              // //span
-            }
-
-            //.carousel-control-prev, .carousel-control-next  
-
-            .carousel-control-prev {
-              float: left;
-            }
-
-            //.carousel-control-prev
-
-            .carousel-indicators {
-              margin: 4px 0;
-              width: 80%;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              z-index: 15;
-              display: -ms-flexbox;
-              display: inline-flex;
-              -ms-flex-pack: center;
-              justify-content: center;
-              padding-left: 0;
-              list-style: none;
-              position: relative;
-            }
-
-            //.carousel-indicators
-
-            .carousel-control-next {
-              float: right;
-            }
-
-            //.carousel-control-next
-
-            .carousel-control-prev:hover,
-            .carousel-control-next:hover {
-              color: #fff;
-              text-decoration: none;
-              outline: 0;
-              opacity: .9;
-            }
-
-            //.carousel-control-next:hover, .carousel-control-prev:hover
-
+            // //span
           }
 
-          //.carousel-control
-          .pause-cycle-button {
-            // background-color: #5453538f;
-            background-color: var(--background);// #343a40;
-            padding: 0.15rem 1rem;
-            border-radius: 0.25rem;
-            margin: auto;
-            width: fit-content;
+          //.carousel-control-prev, .carousel-control-next  
 
-            .btn-customized {
-              width: 2rem;
-              height: 2rem;
-              padding: 0;
-              background: #fff;
-              border: 0;
-              border-radius: 50%;
-              font-family: 'Open Sans', sans-serif;
-              font-size: 15px;
-              font-weight: 400;
-              color: #555;
-              line-height: 2rem;
-              box-shadow: none;
-            }
-
-            //.btn-customized
-            .btn-customized:hover,
-            .btn-customized:active,
-            .btn-customized:focus,
-            .btn-customized:active:focus,
-            .btn-customized.active:focus,
-            .btn.btn-primary:not(:disabled):not(.disabled):active,
-            .btn.btn-primary:not(:disabled):not(.disabled):active:focus {
-              outline: 0;
-              background: #ccc;
-              background: rgba(255, 255, 255, 0.5);
-              border: 0;
-              color: #555;
-              box-shadow: none;
-            }
-
-            //.btn-cust.........                
+          .carousel-control-prev {
+            float: left;
           }
 
-          //.pause-cycle-button
+          //.carousel-control-prev
+
+          .carousel-indicators {
+            margin: 4px 0;
+            width: 80%;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 15;
+            display: -ms-flexbox;
+            display: inline-flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            padding-left: 0;
+            list-style: none;
+            position: relative;
+          }
+
+          //.carousel-indicators
+
+          .carousel-control-next {
+            float: right;
+          }
+
+          //.carousel-control-next
+
+          .carousel-control-prev:hover,
+          .carousel-control-next:hover {
+            color: #fff;
+            text-decoration: none;
+            outline: 0;
+            opacity: .9;
+          }
+
+          //.carousel-control-next:hover, .carousel-control-prev:hover
+
         }
 
-        //#carouselExampleIndicators
+        //.carousel-control
+        .pause-cycle-button {
+          // background-color: #5453538f;
+          background-color: var(--background);// #343a40;
+          padding: 0.15rem 1rem;
+          border-radius: 0.25rem;
+          margin: auto;
+          width: fit-content;
 
+          .btn-customized {
+            width: 2rem;
+            height: 2rem;
+            padding: 0;
+            background: #fff;
+            border: 0;
+            border-radius: 50%;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #555;
+            line-height: 2rem;
+            box-shadow: none;
+          }
 
+          //.btn-customized
+          .btn-customized:hover,
+          .btn-customized:active,
+          .btn-customized:focus,
+          .btn-customized:active:focus,
+          .btn-customized.active:focus,
+          .btn.btn-primary:not(:disabled):not(.disabled):active,
+          .btn.btn-primary:not(:disabled):not(.disabled):active:focus {
+            outline: 0;
+            background: #ccc;
+            background: rgba(255, 255, 255, 0.5);
+            border: 0;
+            color: #555;
+            box-shadow: none;
+          }
+
+          //.btn-cust.........                
+        }
+
+        //.pause-cycle-button
       }
 
-      //.caro
+      //#carouselExampleIndicators
+
+
     }
 
-    //.show
+    //.caro
+  }
 
+  //.show
+
+  .main {
+    grid-area: main;
+    background-color: rgba(65, 99, 24, 0.94);
+    // .container {
+    //   p {}//p
+    // }//.container
+  }
+
+  //.main
+
+  .artical1 {
+    grid-area: artical1;
+    background-color: rgba(85, 129, 32, 0.94);
+    // .container {
+    //   h1 {}//h1
+    //   p {}//p
+    // }//.container
+  }
+
+  //.artical1
+
+  .artical2 {
+    grid-area: artical2;
+    background-color: rgba(89, 151, 14, 0.94);
+    // .container {
+    //   h1 {}//h1
+    //   p {}//p
+    // }//.container
+  }
+
+  //.artical2
+
+  .artical3 {
+    grid-area: artical3;
+    background-color: rgba(110, 192, 9, 0.94);
+    // .container {
+    //   h1 {}//h1
+    //   p {}//p
+    // }//.container
+  }
+
+  //.artical3
+
+  .footer {
+    grid-area: footer;
+    // h2 {}//h2
+    // a {}//a
+  }
+
+  //.footer
+
+  grid-template-areas: "show"
+  "main"
+  "artical1"
+  "artical2"
+  "artical3"
+  "footer";
+}
+
+/****End .container******/
+
+h1,
+h2,
+h3 {
+  color: rgb(8, 8, 8);
+  text-align: center;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(115, 115, 167), 0 0 5px rgb(9, 95, 35);
+}
+
+//h1,h2,h3
+h1 {
+  margin: 0.7rem 0;
+}
+
+h3 {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+//h3
+
+p::first-letter {
+  font-weight: 800;
+  font-size: xx-large;
+}
+
+//p
+/************ End Default settings ************/
+
+/************ Mobile view settings ************/ 
+@media all and (max-width:540px) {
+  
+  .nav {
+    // display: block;
+    .menu {
+      height: 0;// display: none;
+    }
+    .menu-icon {
+      height: 2rem;
+      width: 2rem;
+      // border: 1px solid red;
+      border-radius: .2rem;
+      margin-right: 0rem;
+      padding: 1rem .8rem 1.5rem .8rem;
+      background-color: rgba(55, 219, 157, 0.85);
+      margin-left: auto;/**to get the menu-icon to float right**/
+      cursor: pointer;
+    }
+    .bars {
+      position: relative;
+      right: 7px;
+      top: 4px;
+    }
+    .bars, .bars::before, .bars::after {
+      background-color: #333;
+      display: block;
+      height: 2px;
+      width: 20px;
+      transition: background .3s ease-out;
+    }
+    .bars::before,.bars::after {
+      transition: all .3s ease-out;
+      position: absolute;
+      content:"";
+    }
+    .bars::before {
+      top:6px;
+      // transition: all .3s ease-out;
+    }
+    .bars::after {
+      top:-6px;
+    }
+    .menu-btn:checked ~ .menu-icon .bars::before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+    .menu-btn:checked ~ .menu-icon .bars {
+      background: transparent;
+    }
+    .menu-btn:checked ~ .menu-icon .bars::after {
+      transform: rotate(45deg);
+      top: 0;
+    }
+    .menu-btn:checked ~ .menu {
+      opacity: 1;
+      height: 100%;
+      max-height: 32rem;
+    }
+    .anchor-text {
+      padding: .5rem 1rem;
+      border: none;
+      text-decoration: none;
+    }
+  }/****End .nav******/
+  
+  .grid-container {
+    display: block;
+    .show {
+      display: block;      
+    }
+    
     .main {
-      grid-area: main;
-      background-color: rgba(65, 99, 24, 0.94);
-      // .container {
-      //   p {}//p
-      // }//.container
+      display: block;
     }
-
-    //.main
 
     .artical1 {
-      grid-area: artical1;
-      background-color: rgba(85, 129, 32, 0.94);
-      // .container {
-      //   h1 {}//h1
-      //   p {}//p
-      // }//.container
+      display: block;      
     }
-
-    //.artical1
 
     .artical2 {
-      grid-area: artical2;
-      background-color: rgba(89, 151, 14, 0.94);
-      // .container {
-      //   h1 {}//h1
-      //   p {}//p
-      // }//.container
+      display: block;      
     }
-
-    //.artical2
 
     .artical3 {
-      grid-area: artical3;
-      background-color: rgba(110, 192, 9, 0.94);
-      // .container {
-      //   h1 {}//h1
-      //   p {}//p
-      // }//.container
+      display: block;      
     }
-
-    //.artical3
 
     .footer {
-      grid-area: footer;
-      // h2 {}//h2
-      // a {}//a
+      display: block;      
     }
 
-    //.footer
-
-    grid-template-areas: "show"
-    "main"
-    "artical1"
-    "artical2"
-    "artical3"
-    "footer";
-  }
-
-  //.container
-
-  h1,
-  h2,
-  h3 {
-    color: rgb(8, 8, 8);
-    text-align: center;
-    text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(115, 115, 167), 0 0 5px rgb(9, 95, 35);
-  }
-
-  //h1,h2,h3
-  h1 {
-    margin: 0.7rem 0;
-  }
-
-  h3 {
-    color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-  }
-
-  //h3
-
-  p::first-letter {
-    font-weight: 800;
-    font-size: xx-large;
-  }
-
-  //p
-
-
-
+  }/****End .grid-container******/
+  
 }
+/************ End Mobile view settings ************/ 
+
+/************ TABLET view settings ************/ 
+@media all and (min-width:541px) {
+  .nav {
+    .menu-icon {
+      display:block; 
+    }
+    .menu {
+      opacity: 1;
+      clear: block;
+      float: right;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 0;
+      max-height: 100%;
+      width: fit-content;
+    }  
+    .anchor-text {
+      padding: .5rem .5rem;
+    }
+  }/****End .nav******/    
+}
+/************ End TABLET view settings ************/ 
+
+
+
+
+
+// header {
+//   background: var(--background);
+//   text-align: center;
+//   position: fixed;
+//   z-index: 999;
+//   width: 100%;
+//   /* changed this from the tutorial video to
+//      allow it to gain focus, making it tabbable */
+//   .nav-toggle {
+//     position: absolute !important;
+//     top: -9999px !important;
+//     left: -9999px !important;
+//   }//.nav-toggle
+//   .nav-toggle:focus ~ .nav-toggle-label {
+//     outline: 3px solid rgba(lightblue, .75);
+//   }
+//   .nav-toggle:checked ~ nav {
+//     transform: scale(1,1);
+//     a {
+//       opacity: 1;
+//       transition: opacity 250ms ease-in-out 250ms;
+//     }
+//   }
+//   img {
+//     padding: 1rem 2rem;
+//   }
+
+//   .nav-toggle-label {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     margin-left: 1em;
+//     height: 100%;
+//     display: flex;
+//     align-items: center;
+//     span,
+//     span::before,
+//     span::after {
+//       display: block;
+//       background: white;
+//       height: 2px;
+//       width: 2em;
+//       border-radius: 2px;
+//       position: relative;
+//     }
+    
+//     span::before,
+//     span::after {
+//       content: '';
+//       position: absolute;
+//     }
+    
+//     span::before {
+//       bottom: 9px;
+//     }
+    
+//     span::after {
+//       top: 9px;
+//     }
+//   }//.nav-toggle-label
+//   nav {
+//     position: absolute;
+//     text-align: left;
+//     top: 100%;
+//     left: 0;
+//     background: var(--background);
+//     width: 100%;
+//     transform: scale(1, 0);
+//     transform-origin: top;
+//     transition: transform 400ms ease-in-out;
+//     ul {
+//       margin: 0;
+//       padding: 0;
+//       list-style: none;
+//       li {
+//         margin-bottom: 1em;
+//         margin-left: 1em;
+//         a {
+//           color: white;
+//           text-decoration: none;
+//           font-size: 1.2rem;
+//           text-transform: uppercase;
+//           opacity: 0;
+//           transition: opacity 150ms ease-in-out;
+//         }
+//         a:hover {
+//           color: rgba(57, 235, 12, 1);
+//         }
+//       }
+//     }
+//   }//nav
+// }//header
+
+// @media screen and (min-width: 800px) {
+//   header {
+//     display: grid;
+//     grid-template-columns: 1fr auto minmax(600px, 3fr) 0.25fr;
+    
+//     .nav-toggle-label {
+//       display: none;
+//     }
+  
+//     // .logo {
+//     //   grid-column: 2 / 3;
+//     // }
+    
+//     nav {
+//       // all: unset; /* this causes issues with Edge, since it's unsupported */
+      
+//       /* the following lines are not from my video, but add Edge support */
+//       position: relative;
+//       text-align: left;
+//       transition: none;
+//       transform: scale(1,1);
+//       background: none;
+//       top: initial;
+//       left: initial;
+//       /* end Edge support stuff */
+      
+//       grid-column: 3 / 4;
+//       display: flex;
+//       justify-content: flex-end;
+//       align-items: center;
+//       ul {
+//         display: flex;
+//         li {
+//           margin-left: 3em;
+//           margin-bottom: 0;
+//           a {
+//             opacity: 1;
+//             position: relative;
+//           }// a
+//           a::before {
+//             content: '';
+//             display: block;
+//             height: 5px;
+//             background: black;
+//             position: absolute;
+//             top: -.75em;
+//             left: 0;
+//             right: 0;
+//             transform: scale(0, 1);
+//             transition: transform ease-in-out 250ms;
+//           }// a::before
+          
+//           a:hover::before {
+//             transform: scale(1,1);
+//           }// a:hover::before
+//         }// li
+//       }// ul
+      
+      
+//     }//nav
+    
+//   }//header  
+  
+// }//@media screen and (min-width: 800px)
+
+
+
+
+
+// }
 
 //body
 
