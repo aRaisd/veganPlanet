@@ -1,14 +1,12 @@
+ignore-files/
 package-lock.json
 node_modules/
 fontawesome-5.12.0-web/
-indexsSvg.html
 indexsInd.html
 styleNw.scss
 styleNw.css
 styleOld.scss
 styleOld.css
-git-diff.html
-mediaQuaries.txt
 style0.css
 style0.scss
 style200417.css
@@ -17,8 +15,6 @@ style.scssLatest.css
 style.scssLatest.scss
 .vscode/
 IFstyle.css
-box.css
-box.scss
 style200928.css
 style200928.scss
 style201024.css
@@ -31,6 +27,4 @@ styleOld20201030.css
 styleOld20201030.scss
 stylePreOp.css
 stylePreOp.scss
-tab.html
-tab2.html
 
