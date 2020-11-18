@@ -1,306 +1,142 @@
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,600");
-:root {
-  --background: rgba(85, 84, 84, 0.85);
-  --bg-image: url(assets/img/backgrounds/photo-of-green-and-white-plant-3117174.jpg);
-  --bg-imageSMALL: url(assets/img/backgrounds/SMALLphoto-of-green-and-white-plant-3117174.jpg); }
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
+:root {
+  --background: rgba(85, 84, 84, 0.95); }
+
 body {
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: var(--bg-imageSMALL);
-  background-repeat: no-repeat;
-  width: fit-content;
-  text-align: justify;
-  /* navigation styles start here */ }
-  body header {
-    background: var(--background);
-    text-align: center;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    /* changed this from the tutorial video to
-     allow it to gain focus, making it tabbable */ }
-    body header .nav-toggle {
-      position: absolute !important;
-      top: -9999px !important;
-      left: -9999px !important; }
-    body header .nav-toggle:focus ~ .nav-toggle-label {
-      outline: 3px solid rgba(173, 216, 230, 0.75); }
-    body header .nav-toggle:checked ~ nav {
-      transform: scale(1, 1); }
-      body header .nav-toggle:checked ~ nav a {
-        opacity: 1;
-        transition: opacity 250ms ease-in-out 250ms; }
-    body header img {
-      padding: 1rem 2rem; }
-    body header .nav-toggle-label {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin-left: 1em;
-      height: 100%;
-      display: flex;
-      align-items: center; }
-      body header .nav-toggle-label span,
-      body header .nav-toggle-label span::before,
-      body header .nav-toggle-label span::after {
-        display: block;
-        background: white;
-        height: 2px;
-        width: 2em;
-        border-radius: 2px;
-        position: relative; }
-      body header .nav-toggle-label span::before,
-      body header .nav-toggle-label span::after {
-        content: '';
-        position: absolute; }
-      body header .nav-toggle-label span::before {
-        bottom: 9px; }
-      body header .nav-toggle-label span::after {
-        top: 9px; }
-    body header nav {
-      position: absolute;
-      text-align: left;
-      top: 100%;
-      left: 0;
-      background: var(--background);
-      width: 100%;
-      transform: scale(1, 0);
-      transform-origin: top;
-      transition: transform 400ms ease-in-out; }
-      body header nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none; }
-        body header nav ul li {
-          margin-bottom: 1em;
-          margin-left: 1em; }
-          body header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: opacity 150ms ease-in-out; }
-          body header nav ul li a:hover {
-            color: #39eb0c; }
-  @media screen and (min-width: 800px) {
-    body header {
-      display: grid;
-      grid-template-columns: 1fr auto minmax(600px, 3fr) 0.25fr; }
-      body header .nav-toggle-label {
-        display: none; }
-      body header nav {
-        /* the following lines are not from my video, but add Edge support */
-        position: relative;
-        text-align: left;
-        transition: none;
-        transform: scale(1, 1);
-        background: none;
-        top: initial;
-        left: initial;
-        /* end Edge support stuff */
-        grid-column: 3 / 4;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center; }
-        body header nav ul {
-          display: flex; }
-          body header nav ul li {
-            margin-left: 3em;
-            margin-bottom: 0; }
-            body header nav ul li a {
-              opacity: 1;
-              position: relative; }
-            body header nav ul li a::before {
-              content: '';
-              display: block;
-              height: 5px;
-              background: black;
-              position: absolute;
-              top: -.75em;
-              left: 0;
-              right: 0;
-              transform: scale(0, 1);
-              transition: transform ease-in-out 250ms; }
-            body header nav ul li a:hover::before {
-              transform: scale(1, 1); } }
-  body .grid-container {
-    display: grid;
-    margin: 0 2vw;
-    padding-top: 4.5rem;
-    grid-gap: 2.25vw;
-    grid-template-areas: "show" "main" "artical1" "artical2" "artical3" "footer"; }
-    body .grid-container .show {
-      grid-area: show;
-      width: 96vw;
-      padding: 3rem 1rem;
-      margin: auto; }
-      body .grid-container .show .caro {
-        height: 72vw; }
-        body .grid-container .show .caro #carouselExampleIndicators {
-          height: inherit; }
-          body .grid-container .show .caro #carouselExampleIndicators .carousel-inner {
-            border-radius: .25rem .25rem 0 0;
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            height: inherit;
-            top: 0px; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .carousel-item {
-              background-size: cover;
-              width: inherit;
-              height: inherit; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box:active .flip-box-inner {
-              transform: rotateY(180deg); }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box {
-              background-color: transparent;
-              height: inherit;
-              perspective: 1000px; }
-              body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner {
-                display: block;
-                position: relative;
-                height: inherit;
-                text-align: center;
-                transition: transform 0.7s;
-                transform-style: preserve-3d; }
-                body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front,
-                body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back {
-                  position: absolute;
-                  width: 100%;
-                  height: 100%;
-                  background-color: #bbb;
-                  backface-visibility: unset;
-                  -webkit-backface-visibility: unset;
-                  -moz-backface-visibility: unset;
-                  color: black; }
-                  body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .d-none,
-                  body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .d-none {
-                    display: inline-flex !important; }
-                  body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .carousel-caption,
-                  body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .carousel-caption {
-                    bottom: -20px;
-                    position: sticky;
-                    right: 0%;
-                    left: 0%; }
-                    body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-front .carousel-caption .display-4,
-                    body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back .carousel-caption .display-4 {
-                      line-height: 1.2;
-                      width: 100%;
-                      font-size: 1.5rem;
-                      font-weight: 400; }
-                body .grid-container .show .caro #carouselExampleIndicators .carousel-inner .flip-box .flip-box-inner .flip-box-back {
-                  background-color: #555;
-                  color: white;
-                  transform: rotateY(180deg); }
-          body .grid-container .show .caro #carouselExampleIndicators .carousel-control {
-            border-radius: 0 0 .25rem .25rem;
-            background-color: #343a40;
-            height: 2rem;
-            width: 100%; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev,
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next {
-              position: inherit;
-              height: 2rem;
-              bottom: 12px;
-              z-index: 1;
-              display: -ms-inline-flexbox;
-              display: inline-flex;
-              -ms-flex-align: center;
-              align-items: center;
-              -ms-flex-pack: center;
-              justify-content: center;
-              width: 10%;
-              color: #fff;
-              text-align: center;
-              opacity: .5;
-              transition: opacity .15s ease; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev {
-              float: left; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-indicators {
-              margin: 4px 0;
-              width: 80%;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              z-index: 15;
-              display: -ms-flexbox;
-              display: inline-flex;
-              -ms-flex-pack: center;
-              justify-content: center;
-              padding-left: 0;
-              list-style: none;
-              position: relative; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next {
-              float: right; }
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-prev:hover,
-            body .grid-container .show .caro #carouselExampleIndicators .carousel-control .carousel-control-next:hover {
-              color: #fff;
-              text-decoration: none;
-              outline: 0;
-              opacity: .9; }
-          body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button {
-            background-color: var(--background);
-            padding: 0.15rem 1rem;
-            border-radius: 0.25rem;
-            margin: auto;
-            width: fit-content; }
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized {
-              width: 2rem;
-              height: 2rem;
-              padding: 0;
-              background: #fff;
-              border: 0;
-              border-radius: 50%;
-              font-family: 'Open Sans', sans-serif;
-              font-size: 15px;
-              font-weight: 400;
-              color: #555;
-              line-height: 2rem;
-              box-shadow: none; }
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:hover,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:active,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:focus,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized:active:focus,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn-customized.active:focus,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn.btn-primary:not(:disabled):not(.disabled):active,
-            body .grid-container .show .caro #carouselExampleIndicators .pause-cycle-button .btn.btn-primary:not(:disabled):not(.disabled):active:focus {
-              outline: 0;
-              background: #ccc;
-              background: rgba(255, 255, 255, 0.5);
-              border: 0;
-              color: #555;
-              box-shadow: none; }
-    body .grid-container .main {
-      grid-area: main;
-      background-color: rgba(65, 99, 24, 0.94); }
-    body .grid-container .artical1 {
-      grid-area: artical1;
-      background-color: rgba(85, 129, 32, 0.94); }
-    body .grid-container .artical2 {
-      grid-area: artical2;
-      background-color: rgba(89, 151, 14, 0.94); }
-    body .grid-container .artical3 {
-      grid-area: artical3;
-      background-color: rgba(110, 192, 9, 0.94); }
-    body .grid-container .footer {
-      grid-area: footer; }
-  body h1,
-  body h2,
-  body h3 {
-    color: #080808;
-    text-align: center;
-    text-shadow: 1px 1px 2px white, 0 0 25px #7373a7, 0 0 5px #095f23; }
-  body h1 {
-    margin: 0.7rem 0; }
-  body h3 {
+  font-size: sans-serif; }
+
+header {
+  position: absolute;
+  background: var(--background);
+  width: 100%;
+  padding: .5rem;
+  margin-bottom: .5rem; }
+  header .logo {
+    vertical-align: middle; }
+
+nav {
+  padding: 5px 20px;
+  position: relative; }
+  nav ul.menu {
+    margin: 0px; }
+  nav .menu {
+    list-style-type: none;
+    min-width: 200px; }
+  nav .menu-item {
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 15px 5px; }
+  nav .anchor-text {
     color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; }
-  body p::first-letter {
-    font-weight: 800;
-    font-size: xx-large; }
+    display: block; }
+  nav .anchor-text:hover {
+    color: white;
+    text-decoration: none;
+    background: #525151; }
+  nav .button.secondary {
+    border-bottom: 1px #929191 solid; }
+    nav .button.secondary:hover {
+      font: lighter; }
+
+/* MOBILE MENU */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
+
+.toggle {
+  order: 1;
+  cursor: pointer; }
+
+.toggle:checked {
+  width: 10%;
+  transform: scale(1, 0);
+  transition: all 400ms ease-in-out; }
+
+.menu-item.button {
+  order: 2; }
+
+.menu-item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none; }
+
+.menu-item.active {
+  display: block; }
+
+.bars,
+.bars::before,
+.bars::after {
+  background: #d0cdcd;
+  height: 2px;
+  width: 22px;
+  display: inline-block;
+  position: relative; }
+
+.bars::before,
+.bars::after {
+  position: absolute;
+  content: ""; }
+
+.bars::before {
+  top: 8px; }
+
+.bars::after {
+  top: -8px; }
+
+/* Table menu */
+@media all and (min-width: 468px) {
+  .menu {
+    justify-content: center; }
+  .logo {
+    flex: 1; }
+  .menu-item.button {
+    width: auto;
+    order: 1;
+    display: block;
+    padding: 7px 5px; }
+  .toggle {
+    padding-left: 0;
+    order: 2; }
+  .menu-item.button.secondary {
+    padding-right: 2rem;
+    border: 0; }
+  .button .anchor-text {
+    padding: 7px 15px;
+    background: teal;
+    border: 1px solid #016161;
+    border-radius: 50em; }
+    .button .anchor-text:hover {
+      transition: all .35s; }
+  .secondary .anchor-text {
+    background: transparent; } }
+
+@media all and (min-width: 768px) {
+  .menu-item {
+    display: block;
+    width: auto; }
+  .toggle.anchor-text {
+    display: none; }
+  .logo {
+    order: 0; }
+  .menu-item {
+    order: 1; }
+  .button {
+    order: 2; }
+  .menu .menu-item {
+    padding: 15px 10px; }
+  .menu-item.button.secondary {
+    padding-right: 0; }
+  .menu-item.button {
+    padding-right: 0; } }
+
+.grid-container {
+  display: none; }

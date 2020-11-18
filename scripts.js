@@ -11,7 +11,14 @@ jQuery(document).ready(function() {
 	$('.top-content .carousel-caption').waypoint(function() {
 		$('nav').toggleClass('navbar-no-bg');
 	});
-	
+	$(".toggle").on("click", function()	{
+		if($(".menu-item").hasClass("active")){
+			$(".menu-item").removeClass("active");
+		}
+		else{
+			$(".menu-item").addClass("active");
+		}
+	})
     /*
         Background slideshow
     */
@@ -40,5 +47,36 @@ jQuery(document).ready(function() {
 		}
 		
 	});
+
+var box = document.querySelector('.box');
+var radioGroup = document.querySelector('.radio-group');
+var currentClass = null;
+var hrefsSeLected = document.querySelector('.hrefList');
+
+
+function highLightHref() {
+	console.log('highlight!');
+}
+
+function changeSide() {
+	var checkedRadio = radioGroup.querySelector(':checked');
+  var showClass = 'show-' + checkedRadio.value;
+	console.log("changeSide");
+	console.log("currentClass: "+currentClass);
+	console.log("showClass: " + showClass);
+  if ( currentClass ) {
+		console.log("remove class ?"+currentClass);
+		box.classList.remove( currentClass );
+  }
+  box.classList.add( showClass );
+  currentClass = showClass;
+	console.log("new currentClass: "+currentClass);
+}
+// set initial side
+changeSide();
+
+radioGroup.addEventListener( 'change', changeSide );
+// hrefsSelected.addEventListener( 'active', highLightHref );
+
 	
 });

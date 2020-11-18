@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="carousel-inner" role="listbox">
+              <!-- Slide 1 - Set the background image for this slide in the line below -->
+              <div class="carousel-item">
+                <div class="perspective">
+                  
+                  <!-- Create tabbed navigation and content as follows. -->
+                  <label class="tab" for="tab-one">Tab 1</label>
+                  <label class="tab" for="tab-two">Tab 2</label>
+                  <label class="tab" for="tab-three">Tab 3</label>
+                  <input type="radio" name="tabs" id="tab-one">
+                  <input type="radio" name="tabs" id="tab-two">
+                  <input type="radio" name="tabs" id="tab-three">
+                  <!-- Create tabbed navigation -->
+  
+                  <div class="cube">
+                    <div class="tab-content">
+                      <h1>Tab 1</h1>
+                      <p>THIS IS AWESOME</p>
+                    </div>
+                    <div class="tab-content">
+                      <img src="assets/img/foods/veg-hoisin-sauce-noodles.jpg" style="height: inherit;width: inherit;">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h3 class="display-4">Hoisin Noodles</h3>
+                        <div class="pause-cycle-button">
+                          <button type="button" class="btn btn-primary btn-customized">
+                              <i class="fas fa-pause"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-content">
+                      <h1>Tab 3</h1>
+                      <p>THIS IS SWEET</p>
+                    </div>
+                  </div>
+                </div><!-- perspective -->
+            </div><!-- End .carousel-item -->
+              <!-- End Slide 1 -->
+              <!-- Slide 2 - Set the background image for this slide in the line below -->
+              <div class="carousel-item flip-box active">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <img src="assets/img/foods/chickpeas-pancake.jpg" style="height: inherit;width: inherit;">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h3 class="display-4">Chickpeas Pancake</h3>
+                    </div>
+                  </div><!-- End .flip-box-front -->
+                  <div class="flip-box-back">
+                    <div class="carousel-caption d-none d-md-block">
+                      <p class="lead">Chickpeas description ........</p>
+                    </div><!-- End .carousel-caption d-none d-md-block -->
+                  </div><!-- End .flip-box-back -->
+                </div><!-- End .flip-box-inner -->
+              </div><!-- End .carousel-item -->
+              <!-- End Slide 2 -->
+  </div>
+</body>
+  </html>
