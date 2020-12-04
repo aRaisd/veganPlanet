@@ -105,8 +105,8 @@ body {
     margin: 0 .3rem;
     border: 1px solid black;
     background-color: teal;
-    border-radius: .6rem;  
-    border-radius: 1rem solid black;
+    // border-radius: .6rem;  
+    // border-radius: 1rem solid black;
     box-shadow: inset 0 0 10px #000000;
     &:hover {
       background-color: rgba(0, 128, 128, 0.5S);
@@ -115,10 +115,27 @@ body {
   .secondary {
     background-color: rgb(15, 88, 64);
   }
+  .menu-item {
+    margin-bottom: .1rem;
+    border-radius: .6rem;
+    &:not(.button) {
+      border: 1px solid rgb(124, 122, 122);
+      border-top: none;
+      // border-bottom: 1px solid rgb(124, 122, 122);
+      // border-left: 1px solid rgb(124, 122, 122);
+      // border-right: 1px solid rgb(124, 122, 122);
+    }
+    // border-right: 1px solid rgb(245, 224, 224);
+    &:hover {
+      background-color: #383737;
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
+    }
+  }
   .anchor-text {
     display: block;
     padding: .75rem 1.25rem;
-    border-right: 1px solid rgb(245, 224, 224);
     width: 100%;
     color: rgb(201, 189, 189);
     text-decoration: none;//get rid of underlines
@@ -480,46 +497,7 @@ p::first-letter {
     .logo {
       transform: scale(0.7);
     }
-    // .menu, .menu-btn {
-    //   height: 0;
-    // }
-    // .burger-icon {
-    //   align-self: center;
-    //   height: 2rem;
-    //   width: 2rem;
-    //   border-radius: .2rem;
-    //   margin-right: 0rem;
-    //   padding: 1rem .8rem 1.5rem .8rem;
-    //   background-color: rgba(129, 234, 151, 0.95);
-    //   box-shadow: 3px 2px 5px black;
-    //   margin: 0 .5rem 0 auto;/**to get the burger-icon to float right**/
-    //   cursor: pointer;
-    //   transition: all .4s ease-out;
-    // }
-    // .bars {
-    //   position: relative;
-    //   right: 7px;
-    //   top: 4px;
-    // }
-    // .bars, .bars::before, .bars::after {
-    //   background-color: #333;
-    //   display: block;
-    //   height: 2px;
-    //   width: 20px;
-    //   transition: background .3s ease-out;
-    // }
-    // .bars::before,.bars::after {
-    //   transition: all .3s ease-out;
-    //   position: absolute;
-    //   content:"";
-    // }
-    // .bars::before {
-    //   top:6px;
-    //   // transition: all .3s ease-out;
-    // }
-    // .bars::after {
-    //   top:-6px;
-    // }
+
     .burger-menu:checked ~ .burger-icon {
       border: 1px solid #000;
       background-color: rgba(129, 234, 151, 0.5);
@@ -584,43 +562,13 @@ p::first-letter {
 /************ TABLET view settings ************/ 
 @media all and (min-width:541px) {
   .nav {
-    // padding: .5rem 1rem;
     .burger-icon {
       display:block; 
       order: 4;
-      // align-self: center;
       height: 1.2rem;
-      // width: 2rem;
-      // border-radius: .2rem;
-      // padding: 1rem .8rem 1.5rem .8rem;
-      // background-color: rgba(129, 234, 151, 0.95);
       margin: 0.5rem 0 0.5rem 0.25rem;/**to get the burger-icon to float right**/
       cursor: pointer;
-      // transition: all .4s ease-out;
     }
-    // .bars {
-    //   position: relative;
-    //   right: 7px;
-    //   top: 4px;
-    // }
-    // .bars, .bars::before, .bars::after {
-    //   background-color: #333;
-    //   display: block;
-    //   height: 2px;
-    //   width: 20px;
-    //   transition: background .3s ease-out;
-    // }
-    // .bars::before,.bars::after {
-    //   transition: all .3s ease-out;
-    //   position: absolute;
-    //   content:"";
-    // }
-    // .bars::before {
-    //   top:6px;
-    // }
-    // .bars::after {
-    //   top:-6px;
-    // }
     .burger-menu:checked ~ .burger-icon {
       background-color: rgba(129, 234, 151, 0.5);
     }
@@ -648,10 +596,8 @@ p::first-letter {
       height: 100%;
       &:not(.menu-btn){
         width: 100%;
-//        // display: none;
         height: 0;
         order: 4;
-        // transition: all .3s ease-out;
       }
     }  
     .burger-menu:checked ~ .menu {
@@ -662,6 +608,9 @@ p::first-letter {
     .button .anchor-text {
       border-right: none;
     }
+    // .menu-item {
+    //   border: none;
+    // }
   }
   /****End .nav******/    
 }
